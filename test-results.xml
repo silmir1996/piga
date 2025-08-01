@@ -1,86 +1,42 @@
-<testsuites id="" name="" tests="2" failures="2" skipped="0" errors="0" time="21.336435">
-<testsuite name="e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts" timestamp="2025-08-01T13:13:44.138Z" hostname="chromium" tests="1" failures="1" skipped="0" time="20.712" errors="0">
-<testcase name="Vitalicios Reserva Generales" classname="e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts" time="20.712">
-<failure message="reservaGeneralesConValidacion.spec.ts:5:5 Vitalicios Reserva Generales" type="FAILURE">
-<![CDATA[  [chromium] › e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts:5:5 › Vitalicios Reserva Generales › Test Abono Solidario error handling 
-
-    TimeoutError: locator.click: Timeout 10000ms exceeded.
-    Call log:
-      - waiting for getByRole('button', { name: 'Buscar asiento disponible' })
-
-
-      68 |     await page.getByRole('button', { name: 'Obtener Plateas' }).nth(1).click();
-      69 |     await page.locator('#path709').click();
-    > 70 |     await page.getByRole('button', { name: 'Buscar asiento disponible' }).click();
-         |                                                                           ^
-      71 |     await page.getByRole('button', { name: 'Agregar platea' }).nth(1).click();
-      72 |     await page.locator('.css-175oi2r.r-bnwqim > .css-175oi2r.r-1otgn73').click();
-      73 |     await page.getByText('JUAN MANUEL TEST_EZ').click();
-        at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts:70:75
-        at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts:67:3
-
-    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ../test-results/e2e-matches-vitalicios-res-06dd7-italicios-Reserva-Generales-chromium/test-failed-1.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
-    ../test-results/e2e-matches-vitalicios-res-06dd7-italicios-Reserva-Generales-chromium/video.webm
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ../test-results/e2e-matches-vitalicios-res-06dd7-italicios-Reserva-Generales-chromium/error-context.md
-]]>
-</failure>
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results/e2e-matches-vitalicios-res-06dd7-italicios-Reserva-Generales-chromium/test-failed-1.png]]
-
-[[ATTACHMENT|test-results/e2e-matches-vitalicios-res-06dd7-italicios-Reserva-Generales-chromium/video.webm]]
-
-[[ATTACHMENT|test-results/e2e-matches-vitalicios-res-06dd7-italicios-Reserva-Generales-chromium/error-context.md]]
-]]>
-</system-out>
+<testsuites id="" name="" tests="10" failures="0" skipped="0" errors="0" time="25.804389000000004">
+<testsuite name="e2e/matches/vitalicios/reservaInterna/reservaGeneralesConValidacion.spec.ts" timestamp="2025-08-01T16:52:43.536Z" hostname="chromium" tests="1" failures="0" skipped="0" time="15.502" errors="0">
+<testcase name="Vitalicios Reserva Interna Generales" classname="e2e/matches/vitalicios/reservaInterna/reservaGeneralesConValidacion.spec.ts" time="15.502">
 </testcase>
 </testsuite>
-<testsuite name="e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts" timestamp="2025-08-01T13:13:44.138Z" hostname="chromium" tests="1" failures="1" skipped="0" time="18.893" errors="0">
-<testcase name="Vitalicios Reserva Plateas" classname="e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts" time="18.893">
-<failure message="reservaPlateasConValidacion.spec.ts:5:5 Vitalicios Reserva Plateas" type="FAILURE">
-<![CDATA[  [chromium] › e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts:5:5 › Vitalicios Reserva Plateas › Complete Plateas reservation process 
-
-    TimeoutError: locator.click: Timeout 10000ms exceeded.
-    Call log:
-      - waiting for getByRole('button', { name: 'Buscar asiento disponible' })
-
-
-      54 |     
-      55 |     // Confirm Seat
-    > 56 |     await page.getByRole('button', { name: 'Buscar asiento disponible' }).click();
-         |                                                                           ^
-      57 |     await expect(page.getByText('Sector H | Fila 4, Asiento')).toBeVisible;
-      58 |     await page.getByRole('button', { name: 'Reservar ubicación' }).click();
-      59 |     await expect(page.getByText('¿Querés confirmar esta ubicación?')).toBeVisible();
-        at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts:56:75
-        at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts:29:3
-
-    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ../test-results/e2e-matches-vitalicios-res-cedc2--Vitalicios-Reserva-Plateas-chromium/test-failed-1.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
-    ../test-results/e2e-matches-vitalicios-res-cedc2--Vitalicios-Reserva-Plateas-chromium/video.webm
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ../test-results/e2e-matches-vitalicios-res-cedc2--Vitalicios-Reserva-Plateas-chromium/error-context.md
-]]>
-</failure>
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results/e2e-matches-vitalicios-res-cedc2--Vitalicios-Reserva-Plateas-chromium/test-failed-1.png]]
-
-[[ATTACHMENT|test-results/e2e-matches-vitalicios-res-cedc2--Vitalicios-Reserva-Plateas-chromium/video.webm]]
-
-[[ATTACHMENT|test-results/e2e-matches-vitalicios-res-cedc2--Vitalicios-Reserva-Plateas-chromium/error-context.md]]
-]]>
-</system-out>
+<testsuite name="e2e/matches/vitalicios/reservaInterna/reservaPlateasConValidacion.spec.ts" timestamp="2025-08-01T16:52:43.536Z" hostname="chromium" tests="1" failures="0" skipped="0" time="16.501" errors="0">
+<testcase name="Vitalicios Reserva Interna Plateas" classname="e2e/matches/vitalicios/reservaInterna/reservaPlateasConValidacion.spec.ts" time="16.501">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaInterna/socioActivoCuotaNo.spec.ts" timestamp="2025-08-01T16:52:43.536Z" hostname="chromium" tests="1" failures="0" skipped="0" time="8.22" errors="0">
+<testcase name="Socio activo cuota no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaInterna/socioActivoCuotaNo.spec.ts" time="8.22">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaInterna/socioAdherenteNo.spec.ts" timestamp="2025-08-01T16:52:43.536Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.829" errors="0">
+<testcase name="Socio adherente no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaInterna/socioAdherenteNo.spec.ts" time="7.829">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaInterna/socioVitaAbonoNo.spec.ts" timestamp="2025-08-01T16:52:43.536Z" hostname="chromium" tests="1" failures="0" skipped="0" time="4.205" errors="0">
+<testcase name="Socio Vitalicios Abono no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaInterna/socioVitaAbonoNo.spec.ts" time="4.205">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts" timestamp="2025-08-01T16:52:43.536Z" hostname="chromium" tests="1" failures="0" skipped="0" time="12.234" errors="0">
+<testcase name="Vitalicios Reserva Generales" classname="e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts" time="12.234">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts" timestamp="2025-08-01T16:52:43.536Z" hostname="chromium" tests="1" failures="0" skipped="0" time="12.879" errors="0">
+<testcase name="Vitalicios Reserva Plateas" classname="e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts" time="12.879">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaWeb/socioActivoCuotaNo.spec.ts" timestamp="2025-08-01T16:52:43.536Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.864" errors="0">
+<testcase name="Socio activo cuota no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaWeb/socioActivoCuotaNo.spec.ts" time="3.864">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaWeb/socioAdherenteNo.spec.ts" timestamp="2025-08-01T16:52:43.536Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.971" errors="0">
+<testcase name="Socio adherente no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaWeb/socioAdherenteNo.spec.ts" time="3.971">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaWeb/socioVitaAbonoNo.spec.ts" timestamp="2025-08-01T16:52:43.536Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.351" errors="0">
+<testcase name="Socio Vitalicios Abono no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaWeb/socioVitaAbonoNo.spec.ts" time="3.351">
 </testcase>
 </testsuite>
 </testsuites>

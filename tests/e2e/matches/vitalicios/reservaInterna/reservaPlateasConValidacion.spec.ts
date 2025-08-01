@@ -1,12 +1,11 @@
 import { test, expect } from '@playwright/test';
 import { users } from '../../../../shared/utils/users';
 
-
-test('Vitalicios Reserva Generales', async ({ page }) => {
+test('Vitalicios Reserva Interna Plateas', async ({ page }) => {
   
   await test.step('Login to the application', async () => {
-    await page.goto('');
-    await page.getByRole('textbox', { name: 'Correo electrónico' }).fill(users.reservaWebGeneralesVitalicio);
+    await page.goto('/');
+    await page.getByRole('textbox', { name: 'Correo electrónico' }).fill(users.reservaInternaPlateasVitalicio);
     await page.getByRole('textbox', { name: 'Contraseña' }).fill(users.password);
     await page.getByRole('button', { name: 'Iniciar sesión' }).click();
   });
@@ -23,19 +22,44 @@ test('Vitalicios Reserva Generales', async ({ page }) => {
     await expect(page.getByText('GeneralesVitaliciosObtener Generales')).toBeVisible();
   });
 
-  await test.step('Complete Generales reservation process', async () => {
-    await page.getByRole('button', { name: 'Obtener Generales' }).click();
-    await expect(page.getByRole('main')).toContainText('Juan Manuel Test_ezSocio #17061');
+  await test.step('Complete Plateas reservation process', async () => {
+    
+    await page.getByRole('button', { name: 'Obtener Plateas' }).first().click();
+    await expect(page.getByRole('main')).toContainText('Marcelo Eduardo Test_ezSocio #14719');
     
     // Handle checkbox interaction
-    await page.getByRole('checkbox').click();
-    await expect(page.getByRole('checkbox')).not.toBeChecked();
+    await page.getByRole('checkbox').isVisible();
     await page.getByRole('checkbox').click();
     await expect(page.getByRole('checkbox')).toBeChecked();
+
+    // Assert dropdown has same sector available as stadium map
+    await expect(page.getByText('Sector').nth(1)).toBeVisible();
+    await expect(page.locator('.css-175oi2r.r-bnwqim > .css-175oi2r.r-1otgn73')).toBeVisible();
+
+    // Dropdown and sector validation
+    await page.locator('.css-175oi2r.r-bnwqim > .css-175oi2r.r-1otgn73').click();
+    await expect(page.getByRole('button', { name: 'Continuar' })).toBeDisabled();
     
-    await expect(page.getByRole('button', { name: 'Continuar' })).toBeVisible();
+    // Assert section H is gray (unavailable) and not in dropdown
+    await expect(page.locator('.stadium-map [id^=seccion-H] *:not([id^=text])')).toHaveCSS('fill', 'rgb(218, 224, 235)');
+    await expect(page.getByText('Sección H')).not.toBeVisible();
+    
+    // Assert section G is green (available) before clicking
+    await expect(page.locator('.stadium-map [id^=seccion-G] *:not([id^=text])')).toHaveCSS('fill', 'rgb(45, 133, 80)');
+    await page.locator('.stadium-map [id^=seccion-G]').click();
+    // Assert section G is yellow (selected) after clicking
+    await expect(page.locator('.stadium-map [id^=seccion-G] *:not([id^=text])')).toHaveCSS('fill', 'rgb(239, 176, 39)');
     await expect(page.getByRole('button', { name: 'Continuar' })).toBeEnabled();
     await page.getByRole('button', { name: 'Continuar' }).click();
+    
+    // Confirm Seat
+    await page.getByRole('button', { name: 'Buscar asiento disponible' }).click();
+    await expect(page.getByText('Sector G | Fila 4, Asiento')).toBeVisible;
+    await page.getByRole('button', { name: 'Reservar ubicación' }).click();
+    await expect(page.getByText('¿Querés confirmar esta ubicación?')).toBeVisible();
+    await expect(page.getByRole('main')).toContainText('Estás a punto de confirmar la reserva en el Sector G. Una vez confirmada, no podrás cambiar la ubicación.');
+    await expect(page.getByRole('button', { name: 'Volver' })).toBeVisible();
+    await page.getByRole('button', { name: 'Sí, confirmar reserva' }).click();
   });
 
   await test.step('Verify reservation success and details', async () => {
@@ -51,13 +75,12 @@ test('Vitalicios Reserva Generales', async ({ page }) => {
     await page.getByRole('button', { name: 'Ir atrás' }).click();
   });
 
-  await test.step('Verify plateas are unavailable after reservation', async () => {
-    await page.getByRole('button', { name: 'Obtener Plateas' }).first().click();
+  await test.step('Verify generales are unavailable after reservation', async () => {
+    await page.getByRole('button', { name: 'Obtener generales' }).first().click();
     await expect(page.getByRole('img').nth(1)).toBeVisible();
     await expect(page.getByText('Por el momento no podés')).toBeVisible();
     await expect(page.getByText('Es probable que ya cuentes')).toBeVisible();
     await expect(page.getByRole('button', { name: 'VOLVER AL PARTIDO' })).toBeVisible();
-    await expect(page.getByText('1Tipo de entrada2Sector3Asiento')).toBeVisible();
     await page.getByRole('button', { name: 'VOLVER AL PARTIDO' }).click();
   });
 
@@ -67,7 +90,7 @@ test('Vitalicios Reserva Generales', async ({ page }) => {
     await page.getByRole('button', { name: 'Buscar asiento disponible' }).click();
     await page.getByRole('button', { name: 'Agregar platea' }).nth(1).click();
     await page.locator('.css-175oi2r.r-bnwqim > .css-175oi2r.r-1otgn73').click();
-    await page.getByText('JUAN MANUEL TEST_EZ').click();
+    await page.locator('div').filter({ hasText: /^MARCELO EDUARDO TEST_EZ$/ }).nth(1).click();
     
     await expect(page.getByText('Ocurrió un error')).toBeVisible();
     await expect(page.getByText('El evento no tiene la venta')).toBeVisible();
@@ -85,9 +108,8 @@ test('Vitalicios Reserva Generales', async ({ page }) => {
   });
 
   await test.step('Cancel the reservation', async () => {
-    await page.getByRole('button', { name: 'Obtener Generales' }).click();
+    await page.getByRole('button', { name: 'Obtener Plateas' }).first().click();
     await expect(page.getByText('Ya reservaste')).toBeVisible();
-    
     await page.getByRole('button', { name: 'Cancelar reserva', exact: true }).click();
     await expect(page.getByText('¿QUERÉS CANCELAR LA RESERVA?')).toBeVisible();
     await expect(page.getByText('Una vez que confirmes la cancelación, podrás intentar reservar nuevamente si aún quedan lugares disponibles.')).toBeVisible();
@@ -98,6 +120,6 @@ test('Vitalicios Reserva Generales', async ({ page }) => {
     await page.getByRole('button', { name: 'Cancelar reserva', exact: true }).click();
     await expect(page.getByText('¿QUERÉS CANCELAR LA RESERVA?')).toBeVisible();
     await page.getByRole('button', { name: 'SÍ, CANCELAR RESERVA', exact: true }).click();
-    await expect(page.getByRole('button', { name: 'Continuar' })).toBeEnabled();
+    await expect(page.getByRole('button', { name: 'Continuar' })).not.toBeEnabled();
   });
 }); 

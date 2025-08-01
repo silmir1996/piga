@@ -2,11 +2,11 @@ import { test, expect } from '@playwright/test';
 import { users } from '../../../../shared/utils/users';
 
 
-test('Vitalicios Reserva Generales', async ({ page }) => {
+test('Vitalicios Reserva Interna Generales', async ({ page }) => {
   
   await test.step('Login to the application', async () => {
-    await page.goto('');
-    await page.getByRole('textbox', { name: 'Correo electrónico' }).fill(users.reservaWebGeneralesVitalicio);
+    await page.goto('/');
+    await page.getByRole('textbox', { name: 'Correo electrónico' }).fill(users.reservaInternaGeneralesVitalicio);
     await page.getByRole('textbox', { name: 'Contraseña' }).fill(users.password);
     await page.getByRole('button', { name: 'Iniciar sesión' }).click();
   });
@@ -25,7 +25,7 @@ test('Vitalicios Reserva Generales', async ({ page }) => {
 
   await test.step('Complete Generales reservation process', async () => {
     await page.getByRole('button', { name: 'Obtener Generales' }).click();
-    await expect(page.getByRole('main')).toContainText('Juan Manuel Test_ezSocio #17061');
+    await expect(page.getByRole('main')).toContainText('Marcelo Javier Test_loSocio #16010');
     
     // Handle checkbox interaction
     await page.getByRole('checkbox').click();
@@ -67,7 +67,7 @@ test('Vitalicios Reserva Generales', async ({ page }) => {
     await page.getByRole('button', { name: 'Buscar asiento disponible' }).click();
     await page.getByRole('button', { name: 'Agregar platea' }).nth(1).click();
     await page.locator('.css-175oi2r.r-bnwqim > .css-175oi2r.r-1otgn73').click();
-    await page.getByText('JUAN MANUEL TEST_EZ').click();
+    await page.getByText('MARCELO JAVIER TEST_LO').click();
     
     await expect(page.getByText('Ocurrió un error')).toBeVisible();
     await expect(page.getByText('El evento no tiene la venta')).toBeVisible();

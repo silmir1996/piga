@@ -6,11 +6,8 @@ test('Vitalicios Reserva Plateas', async ({ page }) => {
   
   await test.step('Login to the application', async () => {
     await page.goto('');
-    await page.waitForTimeout(1000);
     await page.getByRole('textbox', { name: 'Correo electrónico' }).fill(users.reservaWebPlateasVitalicio);
     await page.getByRole('textbox', { name: 'Contraseña' }).fill(users.password);
-    await page.getByLabel('Toggle visibility of password').getByRole('img').click();
-    await page.waitForTimeout(1000);
     await page.getByRole('button', { name: 'Iniciar sesión' }).click();
   });
 

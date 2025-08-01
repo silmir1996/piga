@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 2
+      "actualWorkers": 4
     },
     "preserveOutput": "always",
     "reporter": [
@@ -43,7 +43,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 2
+          "actualWorkers": 4
         },
         "id": "chromium",
         "name": "chromium",
@@ -64,14 +64,14 @@
   },
   "suites": [
     {
-      "title": "e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts",
-      "file": "e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts",
+      "title": "e2e/matches/vitalicios/reservaInterna/reservaGeneralesConValidacion.spec.ts",
+      "file": "e2e/matches/vitalicios/reservaInterna/reservaGeneralesConValidacion.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Vitalicios Reserva Generales",
-          "ok": false,
+          "title": "Vitalicios Reserva Interna Generales",
+          "ok": true,
           "tags": [],
           "tests": [
             {
@@ -84,94 +84,348 @@
                 {
                   "workerIndex": 0,
                   "parallelIndex": 0,
-                  "status": "failed",
-                  "duration": 20712,
-                  "error": {
-                    "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Buscar asiento disponible' })\u001b[22m\n",
-                    "stack": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Buscar asiento disponible' })\u001b[22m\n\n    at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts:70:75\n    at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts:67:3",
-                    "location": {
-                      "file": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts",
-                      "column": 75,
-                      "line": 70
-                    },
-                    "snippet": "\u001b[0m \u001b[90m 68 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Obtener Plateas'\u001b[39m })\u001b[33m.\u001b[39mnth(\u001b[35m1\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 69 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#path709'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 70 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Buscar asiento disponible'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 71 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Agregar platea'\u001b[39m })\u001b[33m.\u001b[39mnth(\u001b[35m1\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 72 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.css-175oi2r.r-bnwqim > .css-175oi2r.r-1otgn73'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 73 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByText(\u001b[32m'JUAN MANUEL TEST_EZ'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
-                  },
-                  "errors": [
-                    {
-                      "location": {
-                        "file": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts",
-                        "column": 75,
-                        "line": 70
-                      },
-                      "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Buscar asiento disponible' })\u001b[22m\n\n\n\u001b[0m \u001b[90m 68 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Obtener Plateas'\u001b[39m })\u001b[33m.\u001b[39mnth(\u001b[35m1\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 69 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#path709'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 70 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Buscar asiento disponible'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 71 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Agregar platea'\u001b[39m })\u001b[33m.\u001b[39mnth(\u001b[35m1\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 72 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.css-175oi2r.r-bnwqim > .css-175oi2r.r-1otgn73'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 73 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByText(\u001b[32m'JUAN MANUEL TEST_EZ'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts:70:75\u001b[22m\n\u001b[2m    at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts:67:3\u001b[22m"
-                    }
-                  ],
+                  "status": "passed",
+                  "duration": 15502,
+                  "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
                   "steps": [
                     {
                       "title": "Login to the application",
-                      "duration": 4803
+                      "duration": 5769
                     },
                     {
                       "title": "Navigate to test match and verify available products",
-                      "duration": 2248
+                      "duration": 2639
                     },
                     {
                       "title": "Complete Generales reservation process",
-                      "duration": 521
+                      "duration": 513
                     },
                     {
                       "title": "Verify reservation success and details",
-                      "duration": 1300
+                      "duration": 1326
                     },
                     {
                       "title": "Verify plateas are unavailable after reservation",
-                      "duration": 470
+                      "duration": 530
                     },
                     {
                       "title": "Test Abono Solidario error handling",
-                      "duration": 10892,
-                      "error": {
-                        "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Buscar asiento disponible' })\u001b[22m\n",
-                        "stack": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Buscar asiento disponible' })\u001b[22m\n\n    at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts:70:75\n    at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts:67:3",
-                        "location": {
-                          "file": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts",
-                          "column": 75,
-                          "line": 70
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 68 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Obtener Plateas'\u001b[39m })\u001b[33m.\u001b[39mnth(\u001b[35m1\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 69 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#path709'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 70 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Buscar asiento disponible'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 71 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Agregar platea'\u001b[39m })\u001b[33m.\u001b[39mnth(\u001b[35m1\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 72 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.css-175oi2r.r-bnwqim > .css-175oi2r.r-1otgn73'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 73 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByText(\u001b[32m'JUAN MANUEL TEST_EZ'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
-                      }
+                      "duration": 3455
+                    },
+                    {
+                      "title": "Cancel the reservation",
+                      "duration": 946
                     }
                   ],
-                  "startTime": "2025-08-01T13:13:44.489Z",
+                  "startTime": "2025-08-01T16:52:43.933Z",
                   "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-vitalicios-res-06dd7-italicios-Reserva-Generales-chromium/test-failed-1.png"
-                    },
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-vitalicios-res-06dd7-italicios-Reserva-Generales-chromium/video.webm"
-                    },
-                    {
-                      "name": "error-context",
-                      "contentType": "text/markdown",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-vitalicios-res-06dd7-italicios-Reserva-Generales-chromium/error-context.md"
-                    }
-                  ],
-                  "errorLocation": {
-                    "file": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts",
-                    "column": 75,
-                    "line": 70
-                  }
+                  "attachments": []
                 }
               ],
-              "status": "unexpected"
+              "status": "expected"
+            }
+          ],
+          "id": "af616f656831b6fade20-6764fffe6ef2b9d24abf",
+          "file": "e2e/matches/vitalicios/reservaInterna/reservaGeneralesConValidacion.spec.ts",
+          "line": 5,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/matches/vitalicios/reservaInterna/reservaPlateasConValidacion.spec.ts",
+      "file": "e2e/matches/vitalicios/reservaInterna/reservaPlateasConValidacion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Vitalicios Reserva Interna Plateas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 16501,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Login to the application",
+                      "duration": 6085
+                    },
+                    {
+                      "title": "Navigate to test match and verify available products",
+                      "duration": 2946
+                    },
+                    {
+                      "title": "Complete Plateas reservation process",
+                      "duration": 1879
+                    },
+                    {
+                      "title": "Verify reservation success and details",
+                      "duration": 717
+                    },
+                    {
+                      "title": "Verify generales are unavailable after reservation",
+                      "duration": 497
+                    },
+                    {
+                      "title": "Test Abono Solidario error handling",
+                      "duration": 3236
+                    },
+                    {
+                      "title": "Cancel the reservation",
+                      "duration": 795
+                    }
+                  ],
+                  "startTime": "2025-08-01T16:52:43.941Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8160fdc92a1b191fbf2f-f35396febd0838a813cb",
+          "file": "e2e/matches/vitalicios/reservaInterna/reservaPlateasConValidacion.spec.ts",
+          "line": 4,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/matches/vitalicios/reservaInterna/socioActivoCuotaNo.spec.ts",
+      "file": "e2e/matches/vitalicios/reservaInterna/socioActivoCuotaNo.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Socio activo cuota no visualice productos de Vitalicios ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 8220,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Login to the application",
+                      "duration": 5754
+                    },
+                    {
+                      "title": "Verify that the user does not see Vitalicios products inside vitalicios match",
+                      "duration": 2172
+                    }
+                  ],
+                  "startTime": "2025-08-01T16:52:43.946Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "da26b17f8dfb00dac372-f2e07c6352c09ba17bc5",
+          "file": "e2e/matches/vitalicios/reservaInterna/socioActivoCuotaNo.spec.ts",
+          "line": 5,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/matches/vitalicios/reservaInterna/socioAdherenteNo.spec.ts",
+      "file": "e2e/matches/vitalicios/reservaInterna/socioAdherenteNo.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Socio adherente no visualice productos de Vitalicios ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 7829,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Login to the application",
+                      "duration": 6083
+                    },
+                    {
+                      "title": "Verify that the user does not see Vitalicios products",
+                      "duration": 1431
+                    }
+                  ],
+                  "startTime": "2025-08-01T16:52:43.931Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0ae3e563f9485084ea1-cb38bbf868d60ff0a0cf",
+          "file": "e2e/matches/vitalicios/reservaInterna/socioAdherenteNo.spec.ts",
+          "line": 5,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/matches/vitalicios/reservaInterna/socioVitaAbonoNo.spec.ts",
+      "file": "e2e/matches/vitalicios/reservaInterna/socioVitaAbonoNo.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Socio Vitalicios Abono no visualice productos de Vitalicios ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 4205,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Login to the application",
+                      "duration": 2948
+                    },
+                    {
+                      "title": "Verify that the user does not see Vitalicios products inside vitalicios match",
+                      "duration": 1142
+                    }
+                  ],
+                  "startTime": "2025-08-01T16:52:52.113Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa831c1b24e316f5b6f3-690a0eef21be3336a2c5",
+          "file": "e2e/matches/vitalicios/reservaInterna/socioVitaAbonoNo.spec.ts",
+          "line": 5,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts",
+      "file": "e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Vitalicios Reserva Generales",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 12234,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Login to the application",
+                      "duration": 2735
+                    },
+                    {
+                      "title": "Navigate to test match and verify available products",
+                      "duration": 2613
+                    },
+                    {
+                      "title": "Complete Generales reservation process",
+                      "duration": 704
+                    },
+                    {
+                      "title": "Verify reservation success and details",
+                      "duration": 878
+                    },
+                    {
+                      "title": "Verify plateas are unavailable after reservation",
+                      "duration": 466
+                    },
+                    {
+                      "title": "Test Abono Solidario error handling",
+                      "duration": 3911
+                    },
+                    {
+                      "title": "Cancel the reservation",
+                      "duration": 781
+                    }
+                  ],
+                  "startTime": "2025-08-01T16:52:52.506Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
             }
           ],
           "id": "f1b745b73d77a4357300-30f24c4f932e5dfd1759",
@@ -189,7 +443,131 @@
       "specs": [
         {
           "title": "Vitalicios Reserva Plateas",
-          "ok": false,
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 12879,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Login to the application",
+                      "duration": 2809
+                    },
+                    {
+                      "title": "Navigate to test match and verify available products",
+                      "duration": 2321
+                    },
+                    {
+                      "title": "Complete Plateas reservation process",
+                      "duration": 2349
+                    },
+                    {
+                      "title": "Verify reservation success and details",
+                      "duration": 1350
+                    },
+                    {
+                      "title": "Verify generales are unavailable after reservation",
+                      "duration": 449
+                    },
+                    {
+                      "title": "Test Abono Solidario error handling",
+                      "duration": 2806
+                    },
+                    {
+                      "title": "Cancel the reservation",
+                      "duration": 663
+                    }
+                  ],
+                  "startTime": "2025-08-01T16:52:56.326Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a143cd4d89da6770e39c-aac57c0c0cfc3bb46e90",
+          "file": "e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts",
+          "line": 5,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/matches/vitalicios/reservaWeb/socioActivoCuotaNo.spec.ts",
+      "file": "e2e/matches/vitalicios/reservaWeb/socioActivoCuotaNo.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Socio activo cuota no visualice productos de Vitalicios ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3864,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Login to the application",
+                      "duration": 2108
+                    },
+                    {
+                      "title": "Verify that the user does not see Vitalicios products inside vitalicios match",
+                      "duration": 1628
+                    }
+                  ],
+                  "startTime": "2025-08-01T16:52:59.787Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "43068f88e757d021c84c-363624f7197f47201db1",
+          "file": "e2e/matches/vitalicios/reservaWeb/socioActivoCuotaNo.spec.ts",
+          "line": 5,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/matches/vitalicios/reservaWeb/socioAdherenteNo.spec.ts",
+      "file": "e2e/matches/vitalicios/reservaWeb/socioAdherenteNo.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Socio adherente no visualice productos de Vitalicios ",
+          "ok": true,
           "tags": [],
           "tests": [
             {
@@ -202,86 +580,84 @@
                 {
                   "workerIndex": 1,
                   "parallelIndex": 1,
-                  "status": "failed",
-                  "duration": 18893,
-                  "error": {
-                    "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Buscar asiento disponible' })\u001b[22m\n",
-                    "stack": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Buscar asiento disponible' })\u001b[22m\n\n    at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts:56:75\n    at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts:29:3",
-                    "location": {
-                      "file": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts",
-                      "column": 75,
-                      "line": 56
-                    },
-                    "snippet": "\u001b[0m \u001b[90m 54 |\u001b[39m     \n \u001b[90m 55 |\u001b[39m     \u001b[90m// Confirm Seat\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 56 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Buscar asiento disponible'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 57 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'Sector H | Fila 4, Asiento'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible\u001b[33m;\u001b[39m\n \u001b[90m 58 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Reservar ubicación'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 59 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'¿Querés confirmar esta ubicación?'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
-                  },
-                  "errors": [
-                    {
-                      "location": {
-                        "file": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts",
-                        "column": 75,
-                        "line": 56
-                      },
-                      "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Buscar asiento disponible' })\u001b[22m\n\n\n\u001b[0m \u001b[90m 54 |\u001b[39m     \n \u001b[90m 55 |\u001b[39m     \u001b[90m// Confirm Seat\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 56 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Buscar asiento disponible'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 57 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'Sector H | Fila 4, Asiento'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible\u001b[33m;\u001b[39m\n \u001b[90m 58 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Reservar ubicación'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 59 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'¿Querés confirmar esta ubicación?'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts:56:75\u001b[22m\n\u001b[2m    at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts:29:3\u001b[22m"
-                    }
-                  ],
+                  "status": "passed",
+                  "duration": 3971,
+                  "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
                   "steps": [
                     {
                       "title": "Login to the application",
-                      "duration": 4828
+                      "duration": 2706
                     },
                     {
-                      "title": "Navigate to test match and verify available products",
-                      "duration": 2257
-                    },
-                    {
-                      "title": "Complete Plateas reservation process",
-                      "duration": 11324,
-                      "error": {
-                        "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Buscar asiento disponible' })\u001b[22m\n",
-                        "stack": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Buscar asiento disponible' })\u001b[22m\n\n    at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts:56:75\n    at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts:29:3",
-                        "location": {
-                          "file": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts",
-                          "column": 75,
-                          "line": 56
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 54 |\u001b[39m     \n \u001b[90m 55 |\u001b[39m     \u001b[90m// Confirm Seat\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 56 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Buscar asiento disponible'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 57 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'Sector H | Fila 4, Asiento'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible\u001b[33m;\u001b[39m\n \u001b[90m 58 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Reservar ubicación'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 59 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'¿Querés confirmar esta ubicación?'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
-                      }
+                      "title": "Verify that the user does not see Vitalicios products",
+                      "duration": 1156
                     }
                   ],
-                  "startTime": "2025-08-01T13:13:44.490Z",
+                  "startTime": "2025-08-01T16:53:00.780Z",
                   "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-vitalicios-res-cedc2--Vitalicios-Reserva-Plateas-chromium/test-failed-1.png"
-                    },
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-vitalicios-res-cedc2--Vitalicios-Reserva-Plateas-chromium/video.webm"
-                    },
-                    {
-                      "name": "error-context",
-                      "contentType": "text/markdown",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-vitalicios-res-cedc2--Vitalicios-Reserva-Plateas-chromium/error-context.md"
-                    }
-                  ],
-                  "errorLocation": {
-                    "file": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts",
-                    "column": 75,
-                    "line": 56
-                  }
+                  "attachments": []
                 }
               ],
-              "status": "unexpected"
+              "status": "expected"
             }
           ],
-          "id": "a143cd4d89da6770e39c-aac57c0c0cfc3bb46e90",
-          "file": "e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts",
+          "id": "a90de7e3c350f870ebd8-3579179986c5a54e8591",
+          "file": "e2e/matches/vitalicios/reservaWeb/socioAdherenteNo.spec.ts",
+          "line": 5,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/matches/vitalicios/reservaWeb/socioVitaAbonoNo.spec.ts",
+      "file": "e2e/matches/vitalicios/reservaWeb/socioVitaAbonoNo.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Socio Vitalicios Abono no visualice productos de Vitalicios ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3351,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Login to the application",
+                      "duration": 2145
+                    },
+                    {
+                      "title": "Verify that the user does not see Vitalicios products inside vitalicios match",
+                      "duration": 1088
+                    }
+                  ],
+                  "startTime": "2025-08-01T16:53:03.659Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "db02de15d698c7884a40-684c07722e54c292d391",
+          "file": "e2e/matches/vitalicios/reservaWeb/socioVitaAbonoNo.spec.ts",
           "line": 5,
           "column": 5
         }
@@ -290,11 +666,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-08-01T13:13:44.120Z",
-    "duration": 21336.435,
-    "expected": 0,
+    "startTime": "2025-08-01T16:52:43.422Z",
+    "duration": 25804.389000000003,
+    "expected": 10,
     "skipped": 0,
-    "unexpected": 2,
+    "unexpected": 0,
     "flaky": 0
   }
 }
