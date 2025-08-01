@@ -1,0 +1,23 @@
+{
+  "name": "mcp-playwright-boca",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "codegen:local": "npx playwright codegen http://localhost:3000/",
+    "codegen:staging": "npx playwright codegen https://bocasocios-tst.bocajuniors.com.ar/",
+    "codegen:dev": "npx playwright codegen https://bocasocios-test.bocajuniors.com.ar/",
+    "test:reserva": "npx playwright test tests/e2e/matches/vitalicios/reservaWeb/ --headed",
+    "test:reserva-web": "npx playwright test \"tests/e2e/matches/vitalicios/reservaWeb/reservaConValidacion.spec.ts\" --headed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.54.1",
+    "@types/node": "^24.1.0",
+    "dotenv": "^17.2.1"
+  }
+  
+}
