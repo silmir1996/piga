@@ -1,14 +1,10 @@
 import { test, expect } from '@playwright/test';
-import { users } from '@users';
-
+import { loginWithUserType } from '../../../shared/utils';
 
 test('Socio adherente validar que visualice producto de abono solidario solamente', async ({ page }) => {
   
   await test.step('Login to the application', async () => {
-    await page.goto('/');
-    await page.getByRole('textbox', { name: 'Correo electrónico' }).fill(users.socioAdherenteNo);
-    await page.getByRole('textbox', { name: 'Contraseña' }).fill(users.password);
-    await page.getByRole('button', { name: 'Iniciar sesión' }).click();
+    await loginWithUserType(page, 'socioAdherenteNo');
   });
   
   await test.step('Verify that the user does not see confirmacion products', async () => {

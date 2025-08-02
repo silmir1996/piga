@@ -1,14 +1,10 @@
 import { test, expect } from '@playwright/test';
-import { users } from '@users';
-
+import { loginWithUserType } from '../../../../shared/utils';
 
 test('Socio vitalicio Reserva Interna Populares + valida no permitir sacar Abono solidario ni Reserva Platea', async ({ page }) => {
   
   await test.step('Login to the application', async () => {
-    await page.goto('/');
-    await page.getByRole('textbox', { name: 'Correo electrónico' }).fill(users.reservaInternaGeneralesVitalicio);
-    await page.getByRole('textbox', { name: 'Contraseña' }).fill(users.password);
-    await page.getByRole('button', { name: 'Iniciar sesión' }).click();
+    await loginWithUserType(page, 'reservaInternaGeneralesVitalicio');
   });
 
   await test.step('Navigate to test match and verify available products', async () => {

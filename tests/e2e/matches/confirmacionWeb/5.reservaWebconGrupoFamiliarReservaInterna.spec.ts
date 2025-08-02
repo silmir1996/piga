@@ -1,14 +1,10 @@
 import { test, expect } from '@playwright/test';
-import { users } from '@users';
-
+import { loginWithUserType } from '../../../shared/utils';
 
 test('Socio pleno con grupo familiar Reserva Web para si mismo, y tambien para familiar habilitado para Reserva Interna + AS', async ({ page }) => {
   
   await test.step('Login to the application', async () => {
-    await page.goto('');
-    await page.getByRole('textbox', { name: 'Correo electrónico' }).fill(users.socioConfirmacionWeb);
-    await page.getByRole('textbox', { name: 'Contraseña' }).fill(users.password);
-    await page.getByRole('button', { name: 'Iniciar sesión' }).click();
+    await loginWithUserType(page, 'socioConfirmacionWeb');
   });
   
   await test.step('Verify that the user does see confirmacion product', async () => {

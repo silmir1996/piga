@@ -1,14 +1,10 @@
 import { test, expect } from '@playwright/test';
-import { users } from '@users';
-
+import { loginWithUserType } from '../../../shared/utils';
 
 test('Socio que no pertenece al Filtro pero si gestiona a un familiar que aplica, no debe visualizar el producto', async ({ page }) => {
   
   await test.step('Login to the application', async () => {
-    await page.goto('/');
-    await page.getByRole('textbox', { name: 'Correo electrónico' }).fill(users.socioReservaFiltroNoConFamiliarSi);
-    await page.getByRole('textbox', { name: 'Contraseña' }).fill(users.password);
-    await page.getByRole('button', { name: 'Iniciar sesión' }).click();
+    await loginWithUserType(page, 'socioReservaFiltroNoConFamiliarSi');
   });
   
   await test.step('Verify that the user does not see confirmacion product', async () => {

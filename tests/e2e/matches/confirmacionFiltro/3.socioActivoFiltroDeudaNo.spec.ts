@@ -1,14 +1,10 @@
 import { test, expect } from '@playwright/test';
-import { users } from '@users';
-
+import { loginWithUserType } from '../../../shared/utils';
 
 test('Socio pleno con deuda habilitado para Reserva Filtro debe visualizar warning al intentar reservar que le imposibilite', async ({ page }) => {
   
   await test.step('Login to the application', async () => {
-    await page.goto('/');
-    await page.getByRole('textbox', { name: 'Correo electrónico' }).fill(users.socioReservaFiltroConDeuda);
-    await page.getByRole('textbox', { name: 'Contraseña' }).fill(users.password);
-    await page.getByRole('button', { name: 'Iniciar sesión' }).click();
+    await loginWithUserType(page, 'socioReservaFiltroConDeuda');
   });
   
   await test.step('Verify that the user can not do the reservation and is redirected to the account page', async () => {

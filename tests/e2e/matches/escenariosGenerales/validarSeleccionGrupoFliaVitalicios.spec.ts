@@ -1,14 +1,10 @@
 import { test, expect } from '@playwright/test';
-import { users } from '@users';
-
+import { loginWithUserType } from '../../../shared/utils';
 
 test('Socio con grupo familiar puede seleccionar libremente el grupo familiar', async ({ page }) => {
   
   await test.step('Login to the application', async () => {
-    await page.goto('/');
-    await page.getByRole('textbox', { name: 'Correo electrónico' }).fill(users.vitaliciosGrupoFamiliar);
-    await page.getByRole('textbox', { name: 'Contraseña' }).fill(users.password);
-    await page.getByRole('button', { name: 'Iniciar sesión' }).click();
+    await loginWithUserType(page, 'vitaliciosGrupoFamiliar');
   });
   
   await test.step('Verify that vitalicios product exist and accessible', async () => {
