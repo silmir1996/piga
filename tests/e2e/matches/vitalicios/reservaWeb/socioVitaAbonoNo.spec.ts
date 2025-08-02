@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { users } from '../../../../shared/utils/users';
+import { users } from '@users';
 
 
 test('Socio Vitalicios Abono no visualice productos de Vitalicios ', async ({ page }) => {
@@ -16,6 +16,7 @@ test('Socio Vitalicios Abono no visualice productos de Vitalicios ', async ({ pa
     await page.getByTestId('test-automation-no-utilizar-ver-mas').click();
     await expect(page.getByText('Vitalicios')).not.toBeVisible();
     await expect(page.locator('body')).not.toContainText('Vitalicios');
+    await expect(page.getByText('Obtener Generales')).not.toBeVisible();
     await expect(page.getByText('Abono Solidario')).toBeVisible();
     await expect(page.getByRole('button', { name: 'Obtener Plateas' })).toBeVisible();
   });

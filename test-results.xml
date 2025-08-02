@@ -1,42 +1,66 @@
-<testsuites id="" name="" tests="10" failures="0" skipped="0" errors="0" time="25.804389000000004">
-<testsuite name="e2e/matches/vitalicios/reservaInterna/reservaGeneralesConValidacion.spec.ts" timestamp="2025-08-01T16:52:43.536Z" hostname="chromium" tests="1" failures="0" skipped="0" time="15.502" errors="0">
-<testcase name="Vitalicios Reserva Interna Generales" classname="e2e/matches/vitalicios/reservaInterna/reservaGeneralesConValidacion.spec.ts" time="15.502">
+<testsuites id="" name="" tests="16" failures="0" skipped="0" errors="0" time="34.080040000000004">
+<testsuite name="e2e/matches/confirmacionWeb/socioActivoAbonoNo.spec.ts" timestamp="2025-08-02T02:38:30.030Z" hostname="chromium" tests="1" failures="0" skipped="0" time="11.08" errors="0">
+<testcase name="Socio Activo con Abono no visualice productos de confirmacion " classname="e2e/matches/confirmacionWeb/socioActivoAbonoNo.spec.ts" time="11.08">
 </testcase>
 </testsuite>
-<testsuite name="e2e/matches/vitalicios/reservaInterna/reservaPlateasConValidacion.spec.ts" timestamp="2025-08-01T16:52:43.536Z" hostname="chromium" tests="1" failures="0" skipped="0" time="16.501" errors="0">
-<testcase name="Vitalicios Reserva Interna Plateas" classname="e2e/matches/vitalicios/reservaInterna/reservaPlateasConValidacion.spec.ts" time="16.501">
+<testsuite name="e2e/matches/confirmacionWeb/socioActivoDeudaNo.spec.ts" timestamp="2025-08-02T02:38:30.030Z" hostname="chromium" tests="1" failures="0" skipped="0" time="11.859" errors="0">
+<testcase name="Socio activo con deuda no visualice productos de confirmacion" classname="e2e/matches/confirmacionWeb/socioActivoDeudaNo.spec.ts" time="11.859">
 </testcase>
 </testsuite>
-<testsuite name="e2e/matches/vitalicios/reservaInterna/socioActivoCuotaNo.spec.ts" timestamp="2025-08-01T16:52:43.536Z" hostname="chromium" tests="1" failures="0" skipped="0" time="8.22" errors="0">
-<testcase name="Socio activo cuota no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaInterna/socioActivoCuotaNo.spec.ts" time="8.22">
+<testsuite name="e2e/matches/confirmacionWeb/socioAdherenteNo.spec.ts" timestamp="2025-08-02T02:38:30.030Z" hostname="chromium" tests="1" failures="0" skipped="0" time="14.988" errors="0">
+<testcase name="Socio adherente no visualice productos de confirmacion " classname="e2e/matches/confirmacionWeb/socioAdherenteNo.spec.ts" time="14.988">
 </testcase>
 </testsuite>
-<testsuite name="e2e/matches/vitalicios/reservaInterna/socioAdherenteNo.spec.ts" timestamp="2025-08-01T16:52:43.536Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.829" errors="0">
-<testcase name="Socio adherente no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaInterna/socioAdherenteNo.spec.ts" time="7.829">
+<testsuite name="e2e/matches/confirmacionWeb/socioVitaAbonoNo.spec.ts" timestamp="2025-08-02T02:38:30.030Z" hostname="chromium" tests="1" failures="0" skipped="0" time="11.086" errors="0">
+<testcase name="Socio Vitalicio con abono no visualice productos de confirmacion" classname="e2e/matches/confirmacionWeb/socioVitaAbonoNo.spec.ts" time="11.086">
 </testcase>
 </testsuite>
-<testsuite name="e2e/matches/vitalicios/reservaInterna/socioVitaAbonoNo.spec.ts" timestamp="2025-08-01T16:52:43.536Z" hostname="chromium" tests="1" failures="0" skipped="0" time="4.205" errors="0">
-<testcase name="Socio Vitalicios Abono no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaInterna/socioVitaAbonoNo.spec.ts" time="4.205">
+<testsuite name="e2e/matches/escenariosGenerales/diferenciacionDeSectoresEnGrupoFamiliar.spec.ts" timestamp="2025-08-02T02:38:30.030Z" hostname="chromium" tests="1" failures="0" skipped="0" time="21.266" errors="0">
+<testcase name="Al realizar reserva con socio familiar que aplica para otro producto, diferencia las secciones/productos" classname="e2e/matches/escenariosGenerales/diferenciacionDeSectoresEnGrupoFamiliar.spec.ts" time="21.266">
 </testcase>
 </testsuite>
-<testsuite name="e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts" timestamp="2025-08-01T16:52:43.536Z" hostname="chromium" tests="1" failures="0" skipped="0" time="12.234" errors="0">
-<testcase name="Vitalicios Reserva Generales" classname="e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts" time="12.234">
+<testsuite name="e2e/matches/escenariosGenerales/validarSeleccionGrupoFliaVitalicios.spec.ts" timestamp="2025-08-02T02:38:30.030Z" hostname="chromium" tests="1" failures="0" skipped="0" time="11.442" errors="0">
+<testcase name="Socio con grupo familiar puede seleccionar libremente el grupo familiar" classname="e2e/matches/escenariosGenerales/validarSeleccionGrupoFliaVitalicios.spec.ts" time="11.442">
 </testcase>
 </testsuite>
-<testsuite name="e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts" timestamp="2025-08-01T16:52:43.536Z" hostname="chromium" tests="1" failures="0" skipped="0" time="12.879" errors="0">
-<testcase name="Vitalicios Reserva Plateas" classname="e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts" time="12.879">
+<testsuite name="e2e/matches/vitalicios/reservaInterna/reservaGeneralesConValidacion.spec.ts" timestamp="2025-08-02T02:38:30.030Z" hostname="chromium" tests="1" failures="0" skipped="0" time="14.14" errors="0">
+<testcase name="Vitalicios Reserva Interna Generales" classname="e2e/matches/vitalicios/reservaInterna/reservaGeneralesConValidacion.spec.ts" time="14.14">
 </testcase>
 </testsuite>
-<testsuite name="e2e/matches/vitalicios/reservaWeb/socioActivoCuotaNo.spec.ts" timestamp="2025-08-01T16:52:43.536Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.864" errors="0">
-<testcase name="Socio activo cuota no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaWeb/socioActivoCuotaNo.spec.ts" time="3.864">
+<testsuite name="e2e/matches/vitalicios/reservaInterna/reservaPlateasConValidacion.spec.ts" timestamp="2025-08-02T02:38:30.030Z" hostname="chromium" tests="1" failures="0" skipped="0" time="15.591" errors="0">
+<testcase name="Vitalicios Reserva Interna Plateas" classname="e2e/matches/vitalicios/reservaInterna/reservaPlateasConValidacion.spec.ts" time="15.591">
 </testcase>
 </testsuite>
-<testsuite name="e2e/matches/vitalicios/reservaWeb/socioAdherenteNo.spec.ts" timestamp="2025-08-01T16:52:43.536Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.971" errors="0">
-<testcase name="Socio adherente no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaWeb/socioAdherenteNo.spec.ts" time="3.971">
+<testsuite name="e2e/matches/vitalicios/reservaInterna/socioActivoCuotaNo.spec.ts" timestamp="2025-08-02T02:38:30.030Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.098" errors="0">
+<testcase name="Socio activo cuota no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaInterna/socioActivoCuotaNo.spec.ts" time="7.098">
 </testcase>
 </testsuite>
-<testsuite name="e2e/matches/vitalicios/reservaWeb/socioVitaAbonoNo.spec.ts" timestamp="2025-08-01T16:52:43.536Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.351" errors="0">
-<testcase name="Socio Vitalicios Abono no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaWeb/socioVitaAbonoNo.spec.ts" time="3.351">
+<testsuite name="e2e/matches/vitalicios/reservaInterna/socioAdherenteNo.spec.ts" timestamp="2025-08-02T02:38:30.030Z" hostname="chromium" tests="1" failures="0" skipped="0" time="6.375" errors="0">
+<testcase name="Socio adherente no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaInterna/socioAdherenteNo.spec.ts" time="6.375">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaInterna/socioVitaAbonoNo.spec.ts" timestamp="2025-08-02T02:38:30.030Z" hostname="chromium" tests="1" failures="0" skipped="0" time="5.531" errors="0">
+<testcase name="Socio Vitalicios Abono no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaInterna/socioVitaAbonoNo.spec.ts" time="5.531">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts" timestamp="2025-08-02T02:38:30.030Z" hostname="chromium" tests="1" failures="0" skipped="0" time="12.848" errors="0">
+<testcase name="Vitalicios Reserva Generales" classname="e2e/matches/vitalicios/reservaWeb/reservaGeneralesConValidacion.spec.ts" time="12.848">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts" timestamp="2025-08-02T02:38:30.030Z" hostname="chromium" tests="1" failures="0" skipped="0" time="14.649" errors="0">
+<testcase name="Vitalicios Reserva Plateas" classname="e2e/matches/vitalicios/reservaWeb/reservaPlateasConValidacion.spec.ts" time="14.649">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaWeb/socioActivoCuotaNo.spec.ts" timestamp="2025-08-02T02:38:30.030Z" hostname="chromium" tests="1" failures="0" skipped="0" time="5.721" errors="0">
+<testcase name="Socio activo cuota no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaWeb/socioActivoCuotaNo.spec.ts" time="5.721">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaWeb/socioAdherenteNo.spec.ts" timestamp="2025-08-02T02:38:30.030Z" hostname="chromium" tests="1" failures="0" skipped="0" time="5.072" errors="0">
+<testcase name="Socio adherente no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaWeb/socioAdherenteNo.spec.ts" time="5.072">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaWeb/socioVitaAbonoNo.spec.ts" timestamp="2025-08-02T02:38:30.030Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.569" errors="0">
+<testcase name="Socio Vitalicios Abono no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaWeb/socioVitaAbonoNo.spec.ts" time="3.569">
 </testcase>
 </testsuite>
 </testsuites>

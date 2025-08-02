@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { users } from '../../../../shared/utils/users';
+import { users } from '@users';
 
 
 test('Socio activo cuota no visualice productos de Vitalicios ', async ({ page }) => {
@@ -11,7 +11,7 @@ test('Socio activo cuota no visualice productos de Vitalicios ', async ({ page }
     await page.getByRole('button', { name: 'Iniciar sesión' }).click();
   });
   
-  await test.step('Verify that the user does not see Vitalicios products inside vitalicios match', async () => {
+  await test.step('Verify that the user does not see confirmacion product', async () => {
     await page.getByText('Partidos').click();
     await page.waitForTimeout(500);
     await page.getByTestId('test-automation-no-utilizar-ver-mas').click();

@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 4
+      "actualWorkers": 6
     },
     "preserveOutput": "always",
     "reporter": [
@@ -43,7 +43,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 4
+          "actualWorkers": 6
         },
         "id": "chromium",
         "name": "chromium",
@@ -59,10 +59,346 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.54.1",
-    "workers": 4,
+    "workers": 6,
     "webServer": null
   },
   "suites": [
+    {
+      "title": "e2e/matches/confirmacionWeb/socioActivoAbonoNo.spec.ts",
+      "file": "e2e/matches/confirmacionWeb/socioActivoAbonoNo.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Socio Activo con Abono no visualice productos de confirmacion ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11080,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Login to the application",
+                      "duration": 8114
+                    },
+                    {
+                      "title": "Verify that the user does not see confirmacion product",
+                      "duration": 2615
+                    }
+                  ],
+                  "startTime": "2025-08-02T02:38:30.561Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3415980f760b46b0f08a-dff002c399f65d7dda1f",
+          "file": "e2e/matches/confirmacionWeb/socioActivoAbonoNo.spec.ts",
+          "line": 5,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/matches/confirmacionWeb/socioActivoDeudaNo.spec.ts",
+      "file": "e2e/matches/confirmacionWeb/socioActivoDeudaNo.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Socio activo con deuda no visualice productos de confirmacion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 11859,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Login to the application",
+                      "duration": 8298
+                    },
+                    {
+                      "title": "Verify that the user does not see confirmacion product and is redirected to the account page",
+                      "duration": 3397
+                    }
+                  ],
+                  "startTime": "2025-08-02T02:38:30.561Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7f46b8058cee7f2b8f29-a0d22ae624b63f6125ef",
+          "file": "e2e/matches/confirmacionWeb/socioActivoDeudaNo.spec.ts",
+          "line": 5,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/matches/confirmacionWeb/socioAdherenteNo.spec.ts",
+      "file": "e2e/matches/confirmacionWeb/socioAdherenteNo.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Socio adherente no visualice productos de confirmacion ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 14988,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Login to the application",
+                      "duration": 8126
+                    },
+                    {
+                      "title": "Verify that the user does not see confirmacion products",
+                      "duration": 6610
+                    }
+                  ],
+                  "startTime": "2025-08-02T02:38:30.539Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "448cb53f4e093648ca68-1e7f2ce9afd6b1813768",
+          "file": "e2e/matches/confirmacionWeb/socioAdherenteNo.spec.ts",
+          "line": 5,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/matches/confirmacionWeb/socioVitaAbonoNo.spec.ts",
+      "file": "e2e/matches/confirmacionWeb/socioVitaAbonoNo.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Socio Vitalicio con abono no visualice productos de confirmacion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 11086,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Login to the application",
+                      "duration": 8210
+                    },
+                    {
+                      "title": "Verify that the user does not see Vitalicios products inside vitalicios match",
+                      "duration": 2609
+                    }
+                  ],
+                  "startTime": "2025-08-02T02:38:30.550Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "45260dba2e4eb8992bde-ae9a69813b9955fe39b8",
+          "file": "e2e/matches/confirmacionWeb/socioVitaAbonoNo.spec.ts",
+          "line": 5,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/matches/escenariosGenerales/diferenciacionDeSectoresEnGrupoFamiliar.spec.ts",
+      "file": "e2e/matches/escenariosGenerales/diferenciacionDeSectoresEnGrupoFamiliar.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Al realizar reserva con socio familiar que aplica para otro producto, diferencia las secciones/productos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 4,
+                  "status": "passed",
+                  "duration": 21266,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Login to the application",
+                      "duration": 8058
+                    },
+                    {
+                      "title": "Verify that vitalicios product exist and accessible",
+                      "duration": 3345
+                    },
+                    {
+                      "title": "Assert that owner is being autoselected and section LV is visible and available",
+                      "duration": 1351
+                    },
+                    {
+                      "title": "Verify that the seat is available, select it and verify it turns yellow and go back",
+                      "duration": 1754
+                    },
+                    {
+                      "title": "Verify that the other familiy member has other sections visible and available",
+                      "duration": 863
+                    },
+                    {
+                      "title": "Verify that previous seat is not available and continue reservation verifying reservation is made",
+                      "duration": 2053
+                    },
+                    {
+                      "title": "Make reservation for owner and verify reservation is made",
+                      "duration": 2635
+                    },
+                    {
+                      "title": "Cancel reservation for both members and verify is cancelled",
+                      "duration": 985
+                    }
+                  ],
+                  "startTime": "2025-08-02T02:38:30.546Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "03d2afa2f4a6eb61e841-3dedd30cb9d1b5b6fe3f",
+          "file": "e2e/matches/escenariosGenerales/diferenciacionDeSectoresEnGrupoFamiliar.spec.ts",
+          "line": 5,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/matches/escenariosGenerales/validarSeleccionGrupoFliaVitalicios.spec.ts",
+      "file": "e2e/matches/escenariosGenerales/validarSeleccionGrupoFliaVitalicios.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Socio con grupo familiar puede seleccionar libremente el grupo familiar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 5,
+                  "status": "passed",
+                  "duration": 11442,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Login to the application",
+                      "duration": 7912
+                    },
+                    {
+                      "title": "Verify that vitalicios product exist and accessible",
+                      "duration": 3342
+                    }
+                  ],
+                  "startTime": "2025-08-02T02:38:30.538Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "762776ddcc9e73d4fbe8-e1caf3d41e81113e0e54",
+          "file": "e2e/matches/escenariosGenerales/validarSeleccionGrupoFliaVitalicios.spec.ts",
+          "line": 5,
+          "column": 5
+        }
+      ]
+    },
     {
       "title": "e2e/matches/vitalicios/reservaInterna/reservaGeneralesConValidacion.spec.ts",
       "file": "e2e/matches/vitalicios/reservaInterna/reservaGeneralesConValidacion.spec.ts",
@@ -85,7 +421,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 15502,
+                  "duration": 14140,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -93,34 +429,34 @@
                   "steps": [
                     {
                       "title": "Login to the application",
-                      "duration": 5769
+                      "duration": 3481
                     },
                     {
                       "title": "Navigate to test match and verify available products",
-                      "duration": 2639
+                      "duration": 2684
                     },
                     {
                       "title": "Complete Generales reservation process",
-                      "duration": 513
+                      "duration": 952
                     },
                     {
                       "title": "Verify reservation success and details",
-                      "duration": 1326
+                      "duration": 1110
                     },
                     {
                       "title": "Verify plateas are unavailable after reservation",
-                      "duration": 530
+                      "duration": 738
                     },
                     {
                       "title": "Test Abono Solidario error handling",
-                      "duration": 3455
+                      "duration": 4041
                     },
                     {
                       "title": "Cancel the reservation",
-                      "duration": 946
+                      "duration": 825
                     }
                   ],
-                  "startTime": "2025-08-01T16:52:43.933Z",
+                  "startTime": "2025-08-02T02:38:41.968Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -154,10 +490,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
                   "status": "passed",
-                  "duration": 16501,
+                  "duration": 15591,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -165,34 +501,34 @@
                   "steps": [
                     {
                       "title": "Login to the application",
-                      "duration": 6085
+                      "duration": 4354
                     },
                     {
                       "title": "Navigate to test match and verify available products",
-                      "duration": 2946
+                      "duration": 2500
                     },
                     {
                       "title": "Complete Plateas reservation process",
-                      "duration": 1879
+                      "duration": 2276
                     },
                     {
                       "title": "Verify reservation success and details",
-                      "duration": 717
+                      "duration": 1382
                     },
                     {
                       "title": "Verify generales are unavailable after reservation",
-                      "duration": 497
+                      "duration": 470
                     },
                     {
                       "title": "Test Abono Solidario error handling",
-                      "duration": 3236
+                      "duration": 3748
                     },
                     {
                       "title": "Cancel the reservation",
-                      "duration": 795
+                      "duration": 565
                     }
                   ],
-                  "startTime": "2025-08-01T16:52:43.941Z",
+                  "startTime": "2025-08-02T02:38:41.983Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -226,10 +562,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
+                  "workerIndex": 5,
+                  "parallelIndex": 5,
                   "status": "passed",
-                  "duration": 8220,
+                  "duration": 7098,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -237,14 +573,14 @@
                   "steps": [
                     {
                       "title": "Login to the application",
-                      "duration": 5754
+                      "duration": 5346
                     },
                     {
-                      "title": "Verify that the user does not see Vitalicios products inside vitalicios match",
-                      "duration": 2172
+                      "title": "Verify that the user does not see confirmacion product",
+                      "duration": 1635
                     }
                   ],
-                  "startTime": "2025-08-01T16:52:43.946Z",
+                  "startTime": "2025-08-02T02:38:42.300Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -278,10 +614,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 3,
-                  "parallelIndex": 3,
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 7829,
+                  "duration": 6375,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -289,14 +625,14 @@
                   "steps": [
                     {
                       "title": "Login to the application",
-                      "duration": 6083
+                      "duration": 4529
                     },
                     {
                       "title": "Verify that the user does not see Vitalicios products",
-                      "duration": 1431
+                      "duration": 1533
                     }
                   ],
-                  "startTime": "2025-08-01T16:52:43.931Z",
+                  "startTime": "2025-08-02T02:38:42.728Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -330,10 +666,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 3,
-                  "parallelIndex": 3,
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
                   "status": "passed",
-                  "duration": 4205,
+                  "duration": 5531,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -341,14 +677,14 @@
                   "steps": [
                     {
                       "title": "Login to the application",
-                      "duration": 2948
+                      "duration": 3207
                     },
                     {
                       "title": "Verify that the user does not see Vitalicios products inside vitalicios match",
-                      "duration": 1142
+                      "duration": 2132
                     }
                   ],
-                  "startTime": "2025-08-01T16:52:52.113Z",
+                  "startTime": "2025-08-02T02:38:45.837Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -382,10 +718,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 12234,
+                  "duration": 12848,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -393,34 +729,34 @@
                   "steps": [
                     {
                       "title": "Login to the application",
-                      "duration": 2735
+                      "duration": 2680
                     },
                     {
                       "title": "Navigate to test match and verify available products",
-                      "duration": 2613
+                      "duration": 2983
                     },
                     {
                       "title": "Complete Generales reservation process",
-                      "duration": 704
+                      "duration": 771
                     },
                     {
                       "title": "Verify reservation success and details",
-                      "duration": 878
+                      "duration": 1304
                     },
                     {
                       "title": "Verify plateas are unavailable after reservation",
-                      "duration": 466
+                      "duration": 467
                     },
                     {
                       "title": "Test Abono Solidario error handling",
-                      "duration": 3911
+                      "duration": 3560
                     },
                     {
                       "title": "Cancel the reservation",
-                      "duration": 781
+                      "duration": 840
                     }
                   ],
-                  "startTime": "2025-08-01T16:52:52.506Z",
+                  "startTime": "2025-08-02T02:38:49.120Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -454,10 +790,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 3,
-                  "parallelIndex": 3,
+                  "workerIndex": 5,
+                  "parallelIndex": 5,
                   "status": "passed",
-                  "duration": 12879,
+                  "duration": 14649,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -465,34 +801,34 @@
                   "steps": [
                     {
                       "title": "Login to the application",
-                      "duration": 2809
+                      "duration": 2997
                     },
                     {
                       "title": "Navigate to test match and verify available products",
-                      "duration": 2321
+                      "duration": 3509
                     },
                     {
                       "title": "Complete Plateas reservation process",
-                      "duration": 2349
+                      "duration": 2109
                     },
                     {
                       "title": "Verify reservation success and details",
-                      "duration": 1350
+                      "duration": 1161
                     },
                     {
                       "title": "Verify generales are unavailable after reservation",
-                      "duration": 449
+                      "duration": 432
                     },
                     {
                       "title": "Test Abono Solidario error handling",
-                      "duration": 2806
+                      "duration": 3552
                     },
                     {
                       "title": "Cancel the reservation",
-                      "duration": 663
+                      "duration": 728
                     }
                   ],
-                  "startTime": "2025-08-01T16:52:56.326Z",
+                  "startTime": "2025-08-02T02:38:49.405Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -526,10 +862,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
                   "status": "passed",
-                  "duration": 3864,
+                  "duration": 5721,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -537,14 +873,14 @@
                   "steps": [
                     {
                       "title": "Login to the application",
-                      "duration": 2108
+                      "duration": 3685
                     },
                     {
                       "title": "Verify that the user does not see Vitalicios products inside vitalicios match",
-                      "duration": 1628
+                      "duration": 1885
                     }
                   ],
-                  "startTime": "2025-08-01T16:52:59.787Z",
+                  "startTime": "2025-08-02T02:38:51.390Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -578,10 +914,10 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
+                  "workerIndex": 4,
+                  "parallelIndex": 4,
                   "status": "passed",
-                  "duration": 3971,
+                  "duration": 5072,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -589,14 +925,14 @@
                   "steps": [
                     {
                       "title": "Login to the application",
-                      "duration": 2706
+                      "duration": 3983
                     },
                     {
                       "title": "Verify that the user does not see Vitalicios products",
-                      "duration": 1156
+                      "duration": 966
                     }
                   ],
-                  "startTime": "2025-08-01T16:53:00.780Z",
+                  "startTime": "2025-08-02T02:38:52.138Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -633,7 +969,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3351,
+                  "duration": 3569,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -641,14 +977,14 @@
                   "steps": [
                     {
                       "title": "Login to the application",
-                      "duration": 2145
+                      "duration": 2257
                     },
                     {
                       "title": "Verify that the user does not see Vitalicios products inside vitalicios match",
-                      "duration": 1088
+                      "duration": 1072
                     }
                   ],
-                  "startTime": "2025-08-01T16:53:03.659Z",
+                  "startTime": "2025-08-02T02:38:56.120Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -666,9 +1002,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-08-01T16:52:43.422Z",
-    "duration": 25804.389000000003,
-    "expected": 10,
+    "startTime": "2025-08-02T02:38:29.995Z",
+    "duration": 34080.04,
+    "expected": 16,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

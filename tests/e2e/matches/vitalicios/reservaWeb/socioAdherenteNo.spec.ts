@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { users } from '../../../../shared/utils/users';
+import { users } from '@users';
 
 
 test('Socio adherente no visualice productos de Vitalicios ', async ({ page }) => {
