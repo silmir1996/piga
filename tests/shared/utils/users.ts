@@ -13,6 +13,11 @@ interface User {
   socioConfirmacionWeb: string;
   socioHabilitadoReservaWebPlateaConFamiliar: string;
   socioHabilitadoReservaInternaConFamiliar: string;
+  socioReservaFiltroConDeuda: string;
+  socioReservaFiltroConFamiliar: string;
+  socioReservaFiltroSinFamiliar: string;
+  socioReservaFiltro: string;
+  socioReservaFiltroNoConFamiliarSi: string;
 }
 
 const users: User = {
@@ -28,7 +33,12 @@ const users: User = {
     socioActivoAbono: "171920@mailinator.com",
     socioConfirmacionWeb: "169100@mailinator.com",
     socioHabilitadoReservaWebPlateaConFamiliar: "13274@mailinator.com",
-    socioHabilitadoReservaInternaConFamiliar: "268791@mailinator.com"
+    socioHabilitadoReservaInternaConFamiliar: "268791@mailinator.com",
+    socioReservaFiltroConDeuda: "213720@mailinator.com",
+    socioReservaFiltroConFamiliar: "208715@mailinator.com",
+    socioReservaFiltroSinFamiliar: "211872@mailinator.com",
+    socioReservaFiltroNoConFamiliarSi: "211871@mailinator.com",
+    socioReservaFiltro: "213595@mailinator.com" 
   };
   
 export { users };

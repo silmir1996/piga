@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { users } from '@users';
 
-test('Vitalicios Reserva Interna Plateas', async ({ page }) => {
+test('Socio vitalicio Reserva Interna Platea + valida no permitir sacar Abono solidario ni Reserva Populares', async ({ page }) => {
   
   await test.step('Login to the application', async () => {
     await page.goto('/');

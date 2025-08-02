@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { users } from '@users';
 
 
-test('Vitalicios Reserva Plateas', async ({ page }) => {
+test('Socio vitalicio Reserva Web Platea + valida no permitir sacar Abono solidario ni Reserva Web Populares', async ({ page }) => {
   
   await test.step('Login to the application', async () => {
     await page.goto('');

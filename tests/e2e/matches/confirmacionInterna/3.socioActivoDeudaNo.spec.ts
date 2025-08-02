@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { users } from '@users';
 
 
-test('Socio activo con deuda no visualice productos de confirmacion', async ({ page }) => {
+test('Socio pleno con deuda habilitado para Reserva Interna debe visualizar warning al intentar reservar que le imposibilite', async ({ page }) => {
   
   await test.step('Login to the application', async () => {
     await page.goto('');
@@ -11,7 +11,7 @@ test('Socio activo con deuda no visualice productos de confirmacion', async ({ p
     await page.getByRole('button', { name: 'Iniciar sesión' }).click();
   });
   
-  await test.step('Verify that the user does not see confirmacion product and is redirected to the account page', async () => {
+  await test.step('Verify that the user can not do reservation and is redirected to the account page', async () => {
     await page.getByText('Partidos').click();
     await page.waitForTimeout(500);
     await page.getByTestId('test-automation-no-utilizar-ver-mas').click();
@@ -31,5 +31,6 @@ test('Socio activo con deuda no visualice productos de confirmacion', async ({ p
     await expect(page.getByRole('heading', { name: 'Reservá tu lugar' })).toBeVisible();
     await expect(page.getByRole('button', { name: 'Reservar' })).not.toBeEnabled();
     await expect(page.getByText('Debe cuota')).toBeVisible();
+    await expect(page.locator('input[type="checkbox"]')).not.toBeVisible();
   });
 });
