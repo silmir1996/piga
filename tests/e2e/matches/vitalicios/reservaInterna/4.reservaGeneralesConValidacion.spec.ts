@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { loginWithUserType } from '../../../../shared/utils';
+import { executeStep, loginWithUserType } from '../../../../shared/utils';
 
 test('Socio vitalicio Reserva Interna Populares + valida no permitir sacar Abono solidario ni Reserva Platea', async ({ page }) => {
   
@@ -25,10 +25,18 @@ test('Socio vitalicio Reserva Interna Populares + valida no permitir sacar Abono
     
     // Handle checkbox interaction
     await page.getByRole('checkbox').click();
-    await expect(page.getByRole('checkbox')).not.toBeChecked();
-    await page.getByRole('checkbox').click();
-    await expect(page.getByRole('checkbox')).toBeChecked();
-    
+    await executeStep(
+      page,
+      async () => {
+        await expect(page.getByRole('checkbox')).not.toBeChecked();
+        await page.getByRole('checkbox').click();
+      },
+      async () => {
+        await page.getByRole('checkbox').click();
+        await expect(page.getByRole('checkbox')).not.toBeChecked();
+        await page.getByRole('checkbox').click();
+      }
+    );
     await expect(page.getByRole('button', { name: 'Continuar' })).toBeVisible();
     await expect(page.getByRole('button', { name: 'Continuar' })).toBeEnabled();
     await page.getByRole('button', { name: 'Continuar' }).click();
@@ -53,7 +61,14 @@ test('Socio vitalicio Reserva Interna Populares + valida no permitir sacar Abono
     await expect(page.getByText('Por el momento no podés')).toBeVisible();
     await expect(page.getByText('Es probable que ya cuentes')).toBeVisible();
     await expect(page.getByRole('button', { name: 'VOLVER AL PARTIDO' })).toBeVisible();
-    await expect(page.getByText('1Tipo de entrada2Sector3Asiento')).toBeVisible();
+    await executeStep(
+      page,
+      async () => {
+        await expect(page.getByText('1Tipo de entrada2Sector3Asiento')).toBeVisible();
+      },
+      async () => {
+      }
+    );
     await page.getByRole('button', { name: 'VOLVER AL PARTIDO' }).click();
   });
 
@@ -61,10 +76,25 @@ test('Socio vitalicio Reserva Interna Populares + valida no permitir sacar Abono
     await page.getByRole('button', { name: 'Obtener Plateas' }).nth(1).click();
     await page.locator('#path709').click();
     await page.getByRole('button', { name: 'Buscar asiento disponible' }).click();
-    await page.getByRole('button', { name: 'Agregar platea' }).nth(1).click();
+    await executeStep(
+      page,
+      async () => {
+        await page.getByRole('button', { name: 'Agregar platea' }).nth(1).click();
+      },
+      async () => {
+        await page.getByRole('button', { name: 'Agregar platea' }).click();
+      }
+    );
+    await executeStep(
+      page,
+      async () => {
+      },
+      async () => {
+        await page.locator('div').filter({ hasText: /^\$ 0$/ }).getByRole('button').click();
+      }
+    );
     await page.locator('.css-175oi2r.r-bnwqim > .css-175oi2r.r-1otgn73').click();
     await page.getByText('MARCELO JAVIER TEST_LO').click();
-    
     await expect(page.getByText('Ocurrió un error')).toBeVisible();
     await expect(page.getByText('El evento no tiene la venta')).toBeVisible();
     
@@ -75,7 +105,14 @@ test('Socio vitalicio Reserva Interna Populares + valida no permitir sacar Abono
     await expect(page.getByRole('button', { name: 'Volver' })).toBeVisible();
     await expect(page.getByRole('button', { name: 'Sí, eliminar reserva' })).toBeVisible();
     await page.getByRole('button', { name: 'Sí, eliminar reserva' }).click();
-    await expect(page.locator('div').filter({ hasText: /^Aún no agregaste entradas\.Acá verás las entradas que agregues\.$/ }).nth(2)).toBeVisible();
+    await executeStep(
+      page,
+      async () => {
+        await expect(page.locator('div').filter({ hasText: /^Aún no agregaste entradas\.Acá verás las entradas que agregues\.$/ }).nth(2)).toBeVisible();
+      },
+      async () => {
+      }
+    );
     await page.getByRole('button', { name: 'Ir atrás' }).click();
     await page.getByRole('button', { name: 'Ir atrás' }).click();
   });
@@ -94,6 +131,13 @@ test('Socio vitalicio Reserva Interna Populares + valida no permitir sacar Abono
     await page.getByRole('button', { name: 'Cancelar reserva', exact: true }).click();
     await expect(page.getByText('¿QUERÉS CANCELAR LA RESERVA?')).toBeVisible();
     await page.getByRole('button', { name: 'SÍ, CANCELAR RESERVA', exact: true }).click();
-    await expect(page.getByRole('button', { name: 'Continuar' })).toBeEnabled();
+    await executeStep(
+      page,
+      async () => {
+        await expect(page.getByRole('button', { name: 'Continuar' })).toBeEnabled();      },
+      async () => {
+        await expect(page.getByRole('button', { name: 'Continuar' })).not.toBeEnabled();
+      }
+    );
   });
 }); 

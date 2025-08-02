@@ -8,7 +8,12 @@
     "codegen:staging": "npx playwright codegen https://bocasocios-tst.bocajuniors.com.ar/",
     "codegen:dev": "npx playwright codegen https://bocasocios-test.bocajuniors.com.ar/",
     "test:reserva": "npx playwright test tests/e2e/matches/vitalicios/reservaWeb/ --headed",
-    "test:reserva-web": "npx playwright test \"tests/e2e/matches/vitalicios/reservaWeb/reservaConValidacion.spec.ts\" --headed"
+    "test:reserva-web": "npx playwright test \"tests/e2e/matches/vitalicios/reservaWeb/reservaConValidacion.spec.ts\" --headed",
+    "test:desktop": "npx playwright test --project=\"Desktop Chrome\"",
+    "test:mobile": "npx playwright test --project=\"Mobile Chrome\"",
+    "test:mobile-safari": "npx playwright test --project=\"Mobile Safari\"",
+    "test:all-devices": "npx playwright test",
+    "test:desktop-mobile": "npx playwright test \"tests/e2e/matches/vitalicios/reservaInterna/4.reservaGeneralesConValidacion.spec.ts\" --project=\"Desktop Chrome\" && npx playwright test \"tests/e2e/matches/vitalicios/reservaInterna/4.reservaGeneralesConValidacion.spec.ts\" --project=\"Mobile Safari\""
   },
   "keywords": [],
   "author": "",
