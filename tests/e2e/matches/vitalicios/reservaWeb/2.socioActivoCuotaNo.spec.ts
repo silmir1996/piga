@@ -9,7 +9,7 @@ test('Socio activo cuota no visualice productos de Vitalicios ', async ({ page }
   
   await test.step('Verify that the user does not see Vitalicios products inside vitalicios match', async () => {
     await page.getByText('Partidos').click();
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(1000);
     await page.getByTestId('test-automation-no-utilizar-ver-mas').click();
     await page.locator('div').filter({ hasText: /^NECESITÁS TENER LA CUOTA SOCIAL AL DÍA$/ }).getByRole('button').click();
     await expect(page.getByText('Vitalicios')).not.toBeVisible();

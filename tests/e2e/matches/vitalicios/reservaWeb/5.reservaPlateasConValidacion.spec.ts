@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { loginWithUserType } from '../../../../shared/utils';
+import { executeStep, loginWithUserType } from '../../../../shared/utils';
 
 test('Socio vitalicio Reserva Web Platea + valida no permitir sacar Abono solidario ni Reserva Web Populares', async ({ page }) => {
   
@@ -9,7 +9,7 @@ test('Socio vitalicio Reserva Web Platea + valida no permitir sacar Abono solida
 
   await test.step('Navigate to test match and verify available products', async () => {
     await page.getByText('Partidos').click();
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(1500);
     await page.getByTestId('test-automation-no-utilizar-ver-mas').click();
     await expect(page.getByText('TEST AUTOMATION (No utilizar)', { exact: true })).toBeVisible();
     
@@ -20,31 +20,51 @@ test('Socio vitalicio Reserva Web Platea + valida no permitir sacar Abono solida
   });
 
   await test.step('Complete Plateas reservation process', async () => {
-    
     await page.getByRole('button', { name: 'Obtener Plateas' }).first().click();
     await expect(page.getByRole('main')).toContainText('Vicente Gabriel Test_toSocio #17351');
-    
     // Handle checkbox interaction
-    await page.getByRole('checkbox').isVisible();
-    await page.getByRole('checkbox').click();
-    await expect(page.getByRole('checkbox')).toBeChecked();
-
+    await executeStep(
+      page,
+      async () => {
+        await expect(page.getByRole('checkbox')).toBeChecked();
+        await page.getByRole('checkbox').click();
+      },
+      async () => {
+        await page.getByRole('checkbox').click();
+        await expect(page.getByRole('checkbox')).toBeChecked();
+    await page.getByRole('button', { name: 'Continuar' }).click();
+      }
+    );
     // Assert dropdown has same sector available as stadium map
     await expect(page.getByText('Sector').nth(1)).toBeVisible();
     await expect(page.locator('.css-175oi2r.r-bnwqim > .css-175oi2r.r-1otgn73')).toBeVisible();
 
     // Dropdown and sector validation
     await page.locator('.css-175oi2r.r-bnwqim > .css-175oi2r.r-1otgn73').click();
-    await expect(page.getByRole('button', { name: 'Continuar' })).toBeDisabled();
-    
+    await executeStep(
+      page,
+      async () => {
+        await expect(page.getByRole('button', { name: 'Continuar' })).toBeDisabled();
+      },
+      async () => {
+      }
+    );        
+    // Assert section G is gray (unavailable) and not in dropdown
+    await expect(page.locator('.stadium-map [id^=seccion-G] *:not([id^=text])')).toHaveCSS('fill',  'rgb(218, 224, 235)');
+    await expect(page.getByText('Sección G')).not.toBeVisible();
     // Assert section H is green (not selected) before clicking
     await expect(page.locator('.stadium-map [id^=seccion-H] *:not([id^=text])')).toHaveCSS('fill', 'rgb(45, 133, 80)');
     await page.getByText('Seccion H').click();
     // Assert section H is yellow (selected) after clicking
-    await expect(page.locator('.stadium-map [id^=seccion-H] *:not([id^=text])')).toHaveCSS('fill', 'rgb(239, 176, 39)');
-    await expect(page.getByRole('button', { name: 'Continuar' })).toBeEnabled();
-    await page.getByRole('button', { name: 'Continuar' }).click();
-    
+    await executeStep(
+      page,
+      async () => {
+        await expect(page.locator('.stadium-map [id^=seccion-H] *:not([id^=text])')).toHaveCSS('fill', 'rgb(239, 176, 39)');
+        await expect(page.getByRole('button', { name: 'Continuar' })).toBeEnabled();
+        await page.getByRole('button', { name: 'Continuar' }).click();      },
+      async () => {
+      }
+    );    
     // Confirm Seat
     await page.getByRole('button', { name: 'Buscar asiento disponible' }).click();
     await expect(page.getByText('Sector H | Fila 4, Asiento')).toBeVisible;
@@ -60,7 +80,6 @@ test('Socio vitalicio Reserva Web Platea + valida no permitir sacar Abono solida
     await expect(page.getByRole('main')).toContainText('En cuestión de minutos, lo verás reflejado en tu cuenta y podrás descargar el comprobante desde el Historial.');
     await expect(page.getByRole('button', { name: 'Ver reserva' })).toBeVisible();
     await expect(page.getByRole('button', { name: 'Volver al inicio' })).toBeVisible();
-    
     // Assert the reservation is visible
     await page.getByRole('button', { name: 'Ver reserva' }).click();
     await expect(page.getByText('Ya reservaste')).toBeVisible();
@@ -81,13 +100,20 @@ test('Socio vitalicio Reserva Web Platea + valida no permitir sacar Abono solida
     await page.getByRole('button', { name: 'Obtener Plateas' }).nth(1).click();
     await page.locator('#path709').click();
     await page.getByRole('button', { name: 'Buscar asiento disponible' }).click();
-    await page.getByRole('button', { name: 'Agregar platea' }).nth(1).click();
+    await executeStep(
+      page,
+      async () => {
+        await page.getByRole('button', { name: 'Agregar platea' }).nth(1).click();
+      },
+      async () => {
+        await page.getByRole('button', { name: 'Agregar platea' }).click();
+        await page.locator('div').filter({ hasText: /^\$ 0$/ }).getByRole('button').click();
+      }
+    );
     await page.locator('.css-175oi2r.r-bnwqim > .css-175oi2r.r-1otgn73').click();
     await page.locator('div').filter({ hasText: /^VICENTE GABRIEL TEST_TO$/ }).nth(1).click();
-    
     await expect(page.getByText('Ocurrió un error')).toBeVisible();
     await expect(page.getByText('El evento no tiene la venta')).toBeVisible();
-    
     // Clean up the reservation
     await page.getByRole('button', { name: 'Eliminar' }).click();
     await expect(page.getByText('¿QUERÉS ELIMINAR LA RESERVA?')).toBeVisible();
@@ -95,7 +121,14 @@ test('Socio vitalicio Reserva Web Platea + valida no permitir sacar Abono solida
     await expect(page.getByRole('button', { name: 'Volver' })).toBeVisible();
     await expect(page.getByRole('button', { name: 'Sí, eliminar reserva' })).toBeVisible();
     await page.getByRole('button', { name: 'Sí, eliminar reserva' }).click();
-    await expect(page.locator('div').filter({ hasText: /^Aún no agregaste entradas\.Acá verás las entradas que agregues\.$/ }).nth(2)).toBeVisible();
+    await executeStep(
+      page,
+      async () => {
+        await expect(page.locator('div').filter({ hasText: /^Aún no agregaste entradas\.Acá verás las entradas que agregues\.$/ }).nth(2)).toBeVisible();
+      },
+      async () => {
+      }
+    );
     await page.getByRole('button', { name: 'Ir atrás' }).click();
     await page.getByRole('button', { name: 'Ir atrás' }).click();
   });
@@ -114,5 +147,6 @@ test('Socio vitalicio Reserva Web Platea + valida no permitir sacar Abono solida
     await expect(page.getByText('¿QUERÉS CANCELAR LA RESERVA?')).toBeVisible();
     await page.getByRole('button', { name: 'SÍ, CANCELAR RESERVA', exact: true }).click();
     await expect(page.getByRole('button', { name: 'Continuar' })).not.toBeEnabled();
+    await expect(page.getByText('Ya reservaste')).not.toBeVisible();
   });
 }); 

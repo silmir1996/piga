@@ -12,6 +12,7 @@ test('Socio adherente no visualice productos de confirmacion ', async ({ page })
     await expect(page.getByText('Vitalicios')).not.toBeVisible();
     await expect(page.getByTestId('test-automation-no-utilizar-ver-mas')).not.toBeVisible();
     await expect(page.locator('body')).not.toContainText('TEST AUTOMATION (No utilizar)');
+    await page.waitForTimeout(1000);
     await page.goto("https://bocasocios-tst.bocajuniors.com.ar/matches/855/assist?backUrl=/home");
     await expect(page.getByText('Página no encontrada')).toBeVisible();
     await page.getByRole('button', { name: 'Volver al inicio' }).click();

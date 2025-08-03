@@ -1,0 +1,42 @@
+<testsuites id="" name="" tests="10" failures="0" skipped="0" errors="0" time="46.916473999999994">
+<testsuite name="e2e/matches/vitalicios/reservaInterna/1.socioAdherenteNo.spec.ts" timestamp="2025-08-03T23:57:16.866Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="10.356" errors="0">
+<testcase name="Socio adherente no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaInterna/1.socioAdherenteNo.spec.ts" time="10.356">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaInterna/2.socioActivoCuotaNo.spec.ts" timestamp="2025-08-03T23:57:16.866Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="14.568" errors="0">
+<testcase name="Validar que Socio activo no visualice un producto de Vitalicios" classname="e2e/matches/vitalicios/reservaInterna/2.socioActivoCuotaNo.spec.ts" time="14.568">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaInterna/3.socioVitaAbonoNo.spec.ts" timestamp="2025-08-03T23:57:16.866Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="11.437" errors="0">
+<testcase name="Socio vitalicio con abono no debe visualizar productos Vitalicios Reserva interna" classname="e2e/matches/vitalicios/reservaInterna/3.socioVitaAbonoNo.spec.ts" time="11.437">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaInterna/4.reservaGeneralesConValidacion.spec.ts" timestamp="2025-08-03T23:57:16.866Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="24.615" errors="0">
+<testcase name="Socio vitalicio Reserva Interna Populares + valida no permitir sacar Abono solidario ni Reserva Platea" classname="e2e/matches/vitalicios/reservaInterna/4.reservaGeneralesConValidacion.spec.ts" time="24.615">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaInterna/5.reservaPlateasConValidacion.spec.ts" timestamp="2025-08-03T23:57:16.866Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="20.623" errors="0">
+<testcase name="Socio vitalicio Reserva Interna Platea + valida no permitir sacar Abono solidario ni Reserva Populares" classname="e2e/matches/vitalicios/reservaInterna/5.reservaPlateasConValidacion.spec.ts" time="20.623">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaWeb/1.socioAdherenteNo.spec.ts" timestamp="2025-08-03T23:57:16.866Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="10.658" errors="0">
+<testcase name="Socio adherente no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaWeb/1.socioAdherenteNo.spec.ts" time="10.658">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaWeb/2.socioActivoCuotaNo.spec.ts" timestamp="2025-08-03T23:57:16.866Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="9.378" errors="0">
+<testcase name="Socio activo cuota no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaWeb/2.socioActivoCuotaNo.spec.ts" time="9.378">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaWeb/3.socioVitaAbonoNo.spec.ts" timestamp="2025-08-03T23:57:16.866Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="10.976" errors="0">
+<testcase name="Socio Vitalicios Abono no visualice productos de Vitalicios " classname="e2e/matches/vitalicios/reservaWeb/3.socioVitaAbonoNo.spec.ts" time="10.976">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaWeb/4.reservaGeneralesConValidacion.spec.ts" timestamp="2025-08-03T23:57:16.866Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="20.298" errors="0">
+<testcase name="Socio vitalicio Reserva Web Populares + valida no permitir sacar Abono solidario ni Reserva Web Platea" classname="e2e/matches/vitalicios/reservaWeb/4.reservaGeneralesConValidacion.spec.ts" time="20.298">
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/vitalicios/reservaWeb/5.reservaPlateasConValidacion.spec.ts" timestamp="2025-08-03T23:57:16.866Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="21.605" errors="0">
+<testcase name="Socio vitalicio Reserva Web Platea + valida no permitir sacar Abono solidario ni Reserva Web Populares" classname="e2e/matches/vitalicios/reservaWeb/5.reservaPlateasConValidacion.spec.ts" time="21.605">
+</testcase>
+</testsuite>
+</testsuites>

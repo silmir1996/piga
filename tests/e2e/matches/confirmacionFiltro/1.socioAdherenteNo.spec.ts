@@ -15,6 +15,7 @@ test('Socio adherente validar que visualice producto de abono solidario solament
     await page.locator('div').filter({ hasText: /^NECESITÁS TENER LA CUOTA SOCIAL AL DÍA$/ }).getByRole('button').click();
     await expect(page.getByText('Abono SolidarioAdherente01/07/25, 00:00 hsObtener Plateas')).toBeVisible();
     await expect(page.getByRole('button', { name: 'Obtener Generales' })).not.toBeVisible();
+    await page.waitForTimeout(1000);
     await page.goto("https://bocasocios-tst.bocajuniors.com.ar/matches/875/confirmation");
     await expect(page.getByText('Hubo un problema')).toBeVisible();
     await page.getByRole('button', { name: 'Volver al inicio' }).click();
