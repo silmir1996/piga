@@ -32,7 +32,7 @@ test('Socio vitalicio Reserva Web Platea + valida no permitir sacar Abono solida
       async () => {
         await page.getByRole('checkbox').click();
         await expect(page.getByRole('checkbox')).toBeChecked();
-    await page.getByRole('button', { name: 'Continuar' }).click();
+        await page.getByRole('button', { name: 'Continuar' }).click();
       }
     );
     // Assert dropdown has same sector available as stadium map
