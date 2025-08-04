@@ -1,6 +1,10 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="11.946925">
-<testsuite name="e2e/payment/adherirDAEstandoAlDia.spec.ts" timestamp="2025-08-04T03:55:39.713Z" hostname="Desktop Chrome" tests="1" failures="0" skipped="0" time="11.122" errors="0">
-<testcase name="Adherir DA estando al día y desadherirlo" classname="e2e/payment/adherirDAEstandoAlDia.spec.ts" time="11.122">
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="9.985693">
+<testsuite name="e2e/payment/adherirDAConDeudaTarjeta.spec.ts" timestamp="2025-08-04T04:07:28.748Z" hostname="Desktop Chrome" tests="1" failures="0" skipped="0" time="7.715" errors="0">
+<testcase name="Adherir DA con deuda en tarjeta" classname="e2e/payment/adherirDAConDeudaTarjeta.spec.ts" time="7.715">
+</testcase>
+</testsuite>
+<testsuite name="e2e/payment/adherirDAConDeudaTarjeta.spec.ts" timestamp="2025-08-04T04:07:28.748Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="9.411" errors="0">
+<testcase name="Adherir DA con deuda en tarjeta" classname="e2e/payment/adherirDAConDeudaTarjeta.spec.ts" time="9.411">
 </testcase>
 </testsuite>
 </testsuites>
