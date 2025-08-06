@@ -1,10 +1,28 @@
-<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="9.985693">
-<testsuite name="e2e/payment/adherirDAConDeudaTarjeta.spec.ts" timestamp="2025-08-04T04:07:28.748Z" hostname="Desktop Chrome" tests="1" failures="0" skipped="0" time="7.715" errors="0">
-<testcase name="Adherir DA con deuda en tarjeta" classname="e2e/payment/adherirDAConDeudaTarjeta.spec.ts" time="7.715">
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="8.390622000000002">
+<testsuite name="e2e/matches/confirmacionFiltro/3.socioActivoFiltroDeudaNo.spec.ts" timestamp="2025-08-05T19:02:07.252Z" hostname="Desktop Chrome" tests="1" failures="0" skipped="0" time="6.564" errors="0">
+<testcase name="Socio pleno con deuda habilitado para Reserva Filtro debe visualizar warning al intentar reservar que le imposibilite" classname="e2e/matches/confirmacionFiltro/3.socioActivoFiltroDeudaNo.spec.ts" time="6.564">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/e2e-matches-confirmacionFi-30d68-eservar-que-le-imposibilite-Desktop-Chrome/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/e2e-matches-confirmacionFi-30d68-eservar-que-le-imposibilite-Desktop-Chrome/video.webm]]
+
+[[ATTACHMENT|test-results/e2e-matches-confirmacionFi-30d68-eservar-que-le-imposibilite-Desktop-Chrome/trace.zip]]
+]]>
+</system-out>
 </testcase>
 </testsuite>
-<testsuite name="e2e/payment/adherirDAConDeudaTarjeta.spec.ts" timestamp="2025-08-04T04:07:28.748Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="9.411" errors="0">
-<testcase name="Adherir DA con deuda en tarjeta" classname="e2e/payment/adherirDAConDeudaTarjeta.spec.ts" time="9.411">
+<testsuite name="e2e/matches/confirmacionFiltro/3.socioActivoFiltroDeudaNo.spec.ts" timestamp="2025-08-05T19:02:07.252Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="7.238" errors="0">
+<testcase name="Socio pleno con deuda habilitado para Reserva Filtro debe visualizar warning al intentar reservar que le imposibilite" classname="e2e/matches/confirmacionFiltro/3.socioActivoFiltroDeudaNo.spec.ts" time="7.238">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/e2e-matches-confirmacionFi-30d68-eservar-que-le-imposibilite-Mobile-Safari/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/e2e-matches-confirmacionFi-30d68-eservar-que-le-imposibilite-Mobile-Safari/video.webm]]
+
+[[ATTACHMENT|test-results/e2e-matches-confirmacionFi-30d68-eservar-que-le-imposibilite-Mobile-Safari/trace.zip]]
+]]>
+</system-out>
 </testcase>
 </testsuite>
 </testsuites>

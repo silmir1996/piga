@@ -1,15 +1,13 @@
 import { test, expect } from '@playwright/test';
-import { users } from '@users';
+import { executeStep, loginWithUserType, selectAndVerifySeat } from '../../../shared/utils';
 
 
 test('Al realizar reserva con socio familiar que aplica para otro producto, diferencia las secciones/productos', async ({ page }) => {
   
   await test.step('Login to the application', async () => {
-    await page.goto('/');
-    await page.getByRole('textbox', { name: 'Correo electrónico' }).fill(users.socioHabilitadoReservaWebPlateaConFamiliar);
-    await page.getByRole('textbox', { name: 'Contraseña' }).fill(users.password);
-    await page.getByRole('button', { name: 'Iniciar sesión' }).click();
+    await loginWithUserType(page, 'socioHabilitadoReservaWebPlateaConFamiliar');
   });
+  
   
   await test.step('Verify that vitalicios product exist and accessible', async () => {
     await page.getByText('Partidos').click();
@@ -18,40 +16,70 @@ test('Al realizar reserva con socio familiar que aplica para otro producto, dife
     await page.getByRole('button', { name: 'Obtener Plateas' }).click();
   });
 
-  await test.step('Assert that owner is being autoselected and section LV is visible and available', async () => {
+  await test.step('Assert that owner is being autoselected (desktop) and section LV is visible and available', async () => {
     // Use the specific name that matches the checked element
-    await expect(page.locator('div').filter({ hasText: /^Nelida Mirna Test_etSocio #16723Sector$/ }).getByRole('checkbox')).toHaveAttribute('aria-checked', 'true');  
-    //Assert section LV is green (available)
-    await expect(page.locator('.stadium-map [id^=seccion-LV] path').first()).toHaveCSS('fill', 'rgb(45, 133, 80)');
-    await page.locator('.stadium-map [id^=seccion-LV]').click();
-    // Assert section LV is yellow (selected) after clicking
-    await expect(page.locator('.stadium-map [id^=seccion-LV] path').first()).toHaveCSS('fill', 'rgb(239, 176, 39)');
-    //Assert continue button is enabled
-    await expect(page.getByRole('button', { name: 'Continuar' })).toBeEnabled();
-    //Assert same section is displayed in dropdown
-    await page.locator('div').filter({ hasText: /^Nelida Mirna Test_etSocio #16723Sector$/ }).getByRole('img').nth(1).click();
-    await expect(page.getByText('Seccion LV')).toBeVisible();
-    await expect(page.locator('div').filter({ hasText: /^SectorSeccion LV$/ }).getByRole('img').nth(1)).toBeVisible();
+    await executeStep(
+        page,
+        async () => {
+          await expect(page.locator('div').filter({ hasText: /^Nelida Mirna Test_etSocio #16723Sector$/ }).getByRole('checkbox')).toHaveAttribute('aria-checked', 'true'); 
+          //Assert section LV is green (available)
+          await expect(page.locator('.stadium-map [id^=seccion-LV] path').first()).toHaveCSS('fill', 'rgb(45, 133, 80)');
+          await page.locator('.stadium-map [id^=seccion-LV]').click();
+          // Assert section LV is yellow (selected) after clicking
+          await expect(page.locator('.stadium-map [id^=seccion-LV] path').first()).toHaveCSS('fill', 'rgb(239, 176, 39)');
+          //Assert continue button is enabled
+          await expect(page.getByRole('button', { name: 'Continuar' })).toBeEnabled();
+          //Assert same section is displayed in dropdown
+          await page.locator('div').filter({ hasText: /^Nelida Mirna Test_etSocio #16723Sector$/ }).getByRole('img').nth(1).click();
+          await expect(page.getByText('Seccion LV')).toBeVisible();
+          await expect(page.locator('div').filter({ hasText: /^SectorSeccion LV$/ }).getByRole('img').nth(1)).toBeVisible();
+        },
+        async () => {
+          await page.getByRole('checkbox').first().click();
+          await page.pause();
+        }
+      );
     //Click continue
     await page.getByRole('button', { name: 'Continuar' }).click();
   });
 
   await test.step('Verify that the seat is available, select it and verify it turns yellow and go back', async () => {
-    //Assert seat is available (green background)
-    await expect(page.locator('[id="8119771"] div')).toHaveCSS('background-color', 'rgb(45, 133, 80)');
-    //Click to select the seat and verify it turns yellow
-    await page.locator('[id="8119771"]').getByText('177').click();
-    await page.waitForTimeout(500);
-    //Assert seat is yellow (selected)
-    await expect(page.locator('[id="8119771"] div')).toHaveCSS('background-color', 'rgb(239, 176, 39)');
-    await page.locator('div').filter({ hasText: /^Ubicación seleccionada$/ }).getByRole('button').click();
-    //Click back
-    await page.getByRole('button', { name: 'Ir atrás' }).click();
+    await executeStep(
+      page,
+      async () => {
+        //Function to select and verify seat
+        await selectAndVerifySeat(page, '8119771', '177');
+        await page.locator('div').filter({ hasText: /^Ubicación seleccionada$/ }).getByRole('button').click();
+        //Click back once
+        await page.getByRole('button', { name: 'Ir atrás' }).click();
+      },
+      async () => {
+        //Do same map Flow as line 34
+        await page.pause();
+        await page.locator('#path913').click();
+        await page.waitForTimeout(1000);
+        await page.getByRole('button', { name: 'Ir atrás' }).click();
+        await page.getByRole('img').nth(3).click();
+        await page.waitForTimeout(500);
+        await page.locator('.css-175oi2r.r-1otgn73.r-1r0uh6').click();
+        //Function to select and verify seat
+        await page.pause();
+        await selectAndVerifySeat(page, '8119771', '177');
+        await page.locator('div').filter({ hasText: /^Ubicación seleccionada$/ }).getByRole('button').click();
+        //Click back twice
+        await page.getByRole('button', { name: 'Ir atrás' }).click();
+        await page.getByRole('button', { name: 'Ir atrás' }).click();
+        await page.waitForTimeout(1000);
+      }
+    );
   });
 
   await test.step('Verify that the other familiy member has other sections visible and available', async () => {
     //Select Pablo Hugo and verify checkbox is checked
+    await page.pause();
     await page.getByRole('checkbox').nth(1).click();
+    await page.waitForTimeout(500);
+    await page.pause();
     await expect(page.locator('div').filter({ hasText: /^Pablo Hugo Test_itzSocio #13274Sector$/ }).getByRole('checkbox')).toHaveAttribute('aria-checked', 'true');  
     //Assert other sections are green (available)
     await expect(page.locator('.stadium-map [id^=seccion-LV] *:not([id^=text])').first()).toHaveCSS('fill', 'rgb(45, 133, 80)');

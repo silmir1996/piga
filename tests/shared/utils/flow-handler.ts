@@ -1,4 +1,4 @@
-import { Page } from '@playwright/test';
+import { Page, expect } from '@playwright/test';
 
 export interface FlowStep {
   desktop: () => Promise<void>;
@@ -205,4 +205,33 @@ export async function assertConditionally(
 export function logDeviceConfig(page: Page): void {
   const config = getFlowConfig(page);
   console.log(`[Flow Handler] Device: ${config.isMobile ? 'Mobile' : 'Desktop'}, Viewport: ${config.viewport.width}x${config.viewport.height}`);
+}
+
+/**
+ * Select a seat and verify its color changes from green (available) to yellow (selected)
+ * @param page - Playwright page object
+ * @param seatId - The seat element ID (e.g., "8119771")
+ * @param seatNumber - The seat number text to click (e.g., "177")
+ * @param waitTime - Optional wait time after clicking (default: 500ms)
+ */
+export async function selectAndVerifySeat(
+  page: Page,
+  seatId: string,
+  seatNumber: string,
+  waitTime: number = 500
+): Promise<void> {
+  const seatSelector = `[id="${seatId}"]`;
+  const seatDivSelector = `${seatSelector} div`;
+  
+  // Assert seat is available (green background)
+  await expect(page.locator(seatDivSelector)).toHaveCSS('background-color', 'rgb(45, 133, 80)');
+  
+  // Click to select the seat
+  await page.locator(seatSelector).getByText(seatNumber).click();
+  
+  // Wait for the color change
+  await page.waitForTimeout(waitTime);
+  
+  // Assert seat is yellow (selected)
+  await expect(page.locator(seatDivSelector)).toHaveCSS('background-color', 'rgb(239, 176, 39)');
 } 

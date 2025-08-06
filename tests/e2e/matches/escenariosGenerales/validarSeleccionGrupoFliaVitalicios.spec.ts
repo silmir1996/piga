@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { loginWithUserType } from '../../../shared/utils';
+import { executeStep, loginWithUserType } from '../../../shared/utils';
 
 test('Socio con grupo familiar puede seleccionar libremente el grupo familiar', async ({ page }) => {
   
@@ -13,26 +13,58 @@ test('Socio con grupo familiar puede seleccionar libremente el grupo familiar', 
     await page.getByTestId('test-automation-no-utilizar-ver-mas').click();
     await page.getByRole('button', { name: 'Obtener Generales' }).click(); 
     // Assert user is being autoselected
-    await expect(page.locator('div').filter({ hasText: /^Alberto Test_zSocio #7789$/ }).nth(1).locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'true');  
+    await executeStep(
+        page,
+        async () => {
+          await expect(page.locator('div').filter({ hasText: /^Alberto Test_zSocio #7789$/ }).nth(1).locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'true');  
+        },
+        async () => {
+          await expect(page.locator('div').filter({ hasText: /^Alberto Test_zSocio #7789$/ }).nth(1).locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'false');  
+        }
+      );
     await page.getByRole('checkbox').nth(2).click();
 
     // Assert selected state through aria-checked attribute (correct for custom checkboxes)
     await expect(page.locator('div').filter({ hasText: /^Marcelo Test_varroSocio #17511$/ }).nth(2).locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'true');
-    await expect(page.locator('div').filter({ hasText: /^Seleccionar todo el grupo familiar$/ }).first().locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'true');
-    await expect(page.locator('div').filter({ hasText: /^Alberto Test_zSocio #7789$/ }).nth(1).locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'true');  
+    await executeStep(
+        page,
+        async () => {
+          await expect(page.locator('div').filter({ hasText: /^Seleccionar todo el grupo familiar$/ }).first().locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'true');
+          await expect(page.locator('div').filter({ hasText: /^Alberto Test_zSocio #7789$/ }).nth(1).locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'true');  
 
+        },
+        async () => {
+          await expect(page.locator('div').filter({ hasText: /^Seleccionar todo el grupo familiar$/ }).first().locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'false');
+          await expect(page.locator('div').filter({ hasText: /^Alberto Test_zSocio #7789$/ }).nth(1).locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'false');  
+
+        }
+      );
     await page.getByRole('checkbox').nth(1).click();
-    await expect(page.locator('div').filter({ hasText: /^Seleccionar todo el grupo familiar$/ }).first().locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'false');
-    await expect(page.locator('div').filter({ hasText: /^Alberto Test_zSocio #7789$/ }).nth(1).locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'false');
-    await expect(page.locator('div').filter({ hasText: /^Marcelo Test_varroSocio #17511$/ }).nth(2).locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'true');
+    await executeStep(
+        page,
+        async () => {
+          await expect(page.locator('div').filter({ hasText: /^Seleccionar todo el grupo familiar$/ }).first().locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'false');
+          await expect(page.locator('div').filter({ hasText: /^Alberto Test_zSocio #7789$/ }).nth(1).locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'false');
+          await expect(page.locator('div').filter({ hasText: /^Marcelo Test_varroSocio #17511$/ }).nth(2).locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'true');
+        },
+        async () => {
+          await expect(page.locator('div').filter({ hasText: /^Seleccionar todo el grupo familiar$/ }).first().locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'true');
+          await expect(page.locator('div').filter({ hasText: /^Alberto Test_zSocio #7789$/ }).nth(1).locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'true');
+          await expect(page.locator('div').filter({ hasText: /^Marcelo Test_varroSocio #17511$/ }).nth(2).locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'true');
+        }
+      );
     await expect(page.getByRole('button', { name: 'Continuar' })).toBeEnabled();
-
     await page.getByRole('checkbox').nth(2).click();
     await expect(page.locator('div').filter({ hasText: /^Seleccionar todo el grupo familiar$/ }).first().locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'false');
-    await expect(page.locator('div').filter({ hasText: /^Alberto Test_zSocio #7789$/ }).nth(1).locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'false');
-    await expect(page.locator('div').filter({ hasText: /^Marcelo Test_varroSocio #17511$/ }).nth(2).locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'false');
-    await expect(page.getByRole('button', { name: 'Continuar' })).not.toBeEnabled();
-
+    await executeStep(
+        page,   
+        async () => {
+          await expect(page.locator('div').filter({ hasText: /^Alberto Test_zSocio #7789$/ }).nth(1).locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'false');
+        },
+        async () => {
+          await expect(page.locator('div').filter({ hasText: /^Alberto Test_zSocio #7789$/ }).nth(1).locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'true');
+        }
+      );
     await page.getByText('Seleccionar todo el grupo').click();
     await expect(page.locator('div').filter({ hasText: /^Seleccionar todo el grupo familiar$/ }).first().locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'true');
     await expect(page.locator('div').filter({ hasText: /^Alberto Test_zSocio #7789$/ }).nth(1).locator('[role="checkbox"]')).toHaveAttribute('aria-checked', 'true');

@@ -19,9 +19,9 @@ export default defineConfig({
   
   use: {
     baseURL: process.env.BASE_URL_STAGING,
-    screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
-    trace: 'on-first-retry',
+    screenshot: 'on',
+    video: 'on',
+    trace: 'on',
     actionTimeout: 10000,
     headless: process.env.MCP_HEADLESS === 'false'
   },
