@@ -1,13 +1,13 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="13.796866">
-<testsuite name="e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts" timestamp="2025-08-07T19:29:04.427Z" hostname="Desktop Chrome" tests="1" failures="0" skipped="0" time="12.659" errors="0">
-<testcase name="Socio pleno con grupo familiar Reserva Web para si mismo, y tambien para familiar habilitado para Reserva Interna + AS" classname="e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts" time="12.659">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="8.942827">
+<testsuite name="e2e/abono/cederAbonoSinDatosBancarios.spec.ts" timestamp="2025-08-07T20:43:50.605Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="8.199" errors="0">
+<testcase name="Ceder abono y recuperarlo" classname="e2e/abono/cederAbonoSinDatosBancarios.spec.ts" time="8.199">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results/e2e-matches-confirmacionWe-f20a2-ado-para-Reserva-Interna-AS-Desktop-Chrome/test-finished-1.png]]
+[[ATTACHMENT|test-results/e2e-abono-cederAbonoSinDat-e81d3-s-Ceder-abono-y-recuperarlo-Mobile-Safari/test-finished-1.png]]
 
-[[ATTACHMENT|test-results/e2e-matches-confirmacionWe-f20a2-ado-para-Reserva-Interna-AS-Desktop-Chrome/video.webm]]
+[[ATTACHMENT|test-results/e2e-abono-cederAbonoSinDat-e81d3-s-Ceder-abono-y-recuperarlo-Mobile-Safari/video.webm]]
 
-[[ATTACHMENT|test-results/e2e-matches-confirmacionWe-f20a2-ado-para-Reserva-Interna-AS-Desktop-Chrome/trace.zip]]
+[[ATTACHMENT|test-results/e2e-abono-cederAbonoSinDat-e81d3-s-Ceder-abono-y-recuperarlo-Mobile-Safari/trace.zip]]
 ]]>
 </system-out>
 </testcase>

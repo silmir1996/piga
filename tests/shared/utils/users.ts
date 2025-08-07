@@ -22,6 +22,7 @@ interface User {
   socioTarjetasInternacionales: string;
   socioDAEstandoAlDia: string;
   socioDAConDeudaTarjeta: string;
+  socioActivoAbonoSinDatosBancarios: string;
 }
 
 const users: User = {
@@ -35,6 +36,7 @@ const users: User = {
     socioActivoCuota: "96676@mailinator.com",
     vitaliciosGrupoFamiliar: "7789@mailinator.com",
     socioActivoAbono: "171920@mailinator.com",
+    socioActivoAbonoSinDatosBancarios: "257820@mailinator.com",
     socioConfirmacionWeb: "169100@mailinator.com",
     socioHabilitadoReservaWebPlateaConFamiliar: "13274@mailinator.com",
     socioHabilitadoReservaInternaConFamiliar: "268791@mailinator.com",
