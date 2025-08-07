@@ -14,7 +14,6 @@ test('Socio pleno con abono no debe visualizar producto', async ({ page }) => {
     await page.waitForTimeout(500);
     await page.getByTestId('evento-filtro-automation-no-utilizar-ver-mas').click();
     await expect(page.getByText('Obtener Generales')).not.toBeVisible();
-    await page.pause();
     await expect(page.getByText('Abono SolidarioActivo01/07/25, 00:30 hsObtener Plateas')).toBeVisible();
     await expect(page.getByRole('button', { name: 'Obtener Plateas' })).toBeVisible();
     await page.goto('https://bocasocios-tst.bocajuniors.com.ar/matches/875/confirmation');

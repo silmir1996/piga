@@ -1,31 +1,31 @@
 import { test, expect } from '@playwright/test';
 import { executeStep, loginWithUserType, testAbonoSolidarioErrorHandling } from '../../../shared/utils';
 
-test('Socio pleno con grupo familiar Reserva Interna para si mismo, y tambien para familiar habilitado para Reserva Web + AS', async ({ page }) => {
+test('Validar que se pueda hacer Reserva Filtro para socio y grupo familiar', async ({ page }) => {
   
   await test.step('Login to the application', async () => {
-    await loginWithUserType(page, 'socioHabilitadoReservaInternaConFamiliar');
+    await loginWithUserType(page, 'socioReservaFiltroConFamiliar');
   });
   
   await test.step('Navigate to test match and verify available products', async () => {
     await page.getByText('Partidos').click();
     await page.waitForTimeout(1500);
-    await page.getByTestId('test-automation-no-utilizar-ver-mas').click();
-    await expect(page.getByText('TEST AUTOMATION (No utilizar)', { exact: true })).toBeVisible();
+    await page.getByTestId('evento-filtro-automation-no-utilizar-ver-mas').click();
+    await expect(page.getByText('Evento Filtro Automation (No utilizar)', { exact: true })).toBeVisible();
     // Assert the right products are visible
-    await expect(page.getByText('Abono SolidarioActivo07/04/25, 00:15 hsObtener Plateas')).toBeVisible();
+    await expect(page.getByText('Abono SolidarioActivo01/07/25, 00:30 hsObtener Plateas')).toBeVisible();
     await expect(page.getByText('GeneralesReserva de lugarObtener Generales')).toBeVisible();
   });
 
 await test.step('Assert checkbox behavior on reservation process', async () => {
     await page.getByRole('button', { name: 'Obtener Generales' }).click();
-    await expect(page.locator('div').filter({ hasText: /^Emmanuel Test_ezSocio #268791$/ }).first()).toBeVisible();
-    await expect(page.locator('div').filter({ hasText: /^Juan Ignacio Test_ezSocio #268790$/ }).first()).toBeVisible();
+    await expect(page.locator('div').filter({ hasText: /^Facundo Martin Test_onSocio #208715$/ }).first()).toBeVisible();
+    await expect(page.locator('div').filter({ hasText: /^Marisa Belen Test_isSocio #204167$/ }).first()).toBeVisible();
     // Handle checkbox interaction
     await expect(page.getByRole('button', { name: 'Reservar' })).not.toBeEnabled();
-    await page.locator('div').filter({ hasText: /^Emmanuel Test_ezSocio #268791$/ }).nth(2).click();
+    await page.locator('div').filter({ hasText: /^Facundo Martin Test_onSocio #208715$/ }).nth(2).click();
     await expect(page.getByRole('button', { name: 'Reservar' })).toBeEnabled();
-    await page.locator('div').filter({ hasText: /^Juan Ignacio Test_ezSocio #268790$/ }).nth(2).click();
+    await page.locator('div').filter({ hasText: /^Marisa Belen Test_isSocio #204167$/ }).nth(2).click();
     await expect(page.getByRole('button', { name: 'Reservar' })).toBeEnabled();
     //Continuar
     await expect(page.getByRole('button', { name: 'Reservar' })).toBeVisible();
@@ -41,8 +41,8 @@ await test.step('Assert checkbox behavior on reservation process', async () => {
     // Assert the reservation is visible
     await page.getByRole('button', { name: 'Ver reserva' }).click();
     await page.waitForTimeout(1000);
-    await expect(page.getByText('Emmanuel Test_ezSocio #268791Ya reservaste')).toBeVisible();
-    await expect(page.getByText('Juan Ignacio Test_ezSocio #268790Ya reservaste')).toBeVisible();
+    await expect(page.getByText('Facundo Martin Test_onSocio #208715')).toBeVisible();
+    await expect(page.getByText('Marisa Belen Test_isSocio #204167')).toBeVisible();
     await expect(page.getByRole('button', { name: 'Reservar' })).not.toBeEnabled();
     await page.getByRole('button', { name: 'Ir atrás' }).click();
   });
@@ -50,8 +50,8 @@ await test.step('Assert checkbox behavior on reservation process', async () => {
   await test.step('Test Abono Solidario error handling', async () => {
     await testAbonoSolidarioErrorHandling(
       page,
-      '#path709',
-      ['EMMANUEL TEST_EZ', 'JUAN IGNACIO TEST_EZ']
+      '#path724',
+      ['MARISA BELEN TEST_IS', 'FACUNDO MARTIN TEST_ON']
     );
   });
 });

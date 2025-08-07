@@ -235,3 +235,59 @@ export async function selectAndVerifySeat(
   // Assert seat is yellow (selected)
   await expect(page.locator(seatDivSelector)).toHaveCSS('background-color', 'rgb(239, 176, 39)');
 } 
+
+/**
+ * Test Abono Solidario error handling for specific members
+ * @param page - Playwright page object
+ * @param seatLocator - The seat locator to click (e.g., "#path709")
+ * @param memberNames - Array of member names to test error handling for
+ */
+export async function testAbonoSolidarioErrorHandling(
+  page: Page,
+  seatLocator: string,
+  memberNames: string[]
+): Promise<void> {
+  await page.getByRole('button', { name: 'Obtener Plateas' }).click();
+  await page.locator(seatLocator).click();
+  await page.getByRole('button', { name: 'Buscar asiento disponible' }).click();
+  
+  await executeStep(
+    page,
+    async () => {
+      await page.getByRole('button', { name: 'Agregar platea' }).nth(1).click();
+    },
+    async () => {
+      await page.getByRole('button', { name: 'Agregar platea' }).click();
+      await page.locator('div').filter({ hasText: /^\$ 0$/ }).getByRole('button').click();
+    }
+  );
+
+  // Test error handling for each member
+  for (const memberName of memberNames) {
+    await page.locator('.css-175oi2r.r-bnwqim > .css-175oi2r.r-1otgn73').click();
+    await page.getByText(memberName).click();
+    await expect(page.getByText('Ocurrió un error')).toBeVisible();
+    await expect(page.getByText('El evento no tiene la venta')).toBeVisible();
+  }
+  
+  // Clean up the reservation
+  await page.getByRole('button', { name: 'Eliminar' }).click();
+  await expect(page.getByText('¿QUERÉS ELIMINAR LA RESERVA?')).toBeVisible();
+  await expect(page.getByText('Una vez que elimines la')).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Volver' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Sí, eliminar reserva' })).toBeVisible();
+  await page.getByRole('button', { name: 'Sí, eliminar reserva' }).click();
+  
+  await executeStep(
+    page,
+    async () => {
+      await expect(page.locator('div').filter({ hasText: /^Aún no agregaste entradas\.Acá verás las entradas que agregues\.$/ }).nth(2)).toBeVisible();
+    },
+    async () => {
+      // Mobile cleanup if needed
+    }
+  );
+  
+  await page.getByRole('button', { name: 'Ir atrás' }).click();
+  await page.getByRole('button', { name: 'Ir atrás' }).click();
+} 

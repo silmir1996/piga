@@ -8,7 +8,6 @@ test('Al realizar reserva con socio familiar que aplica para otro producto, dife
     await loginWithUserType(page, 'socioHabilitadoReservaWebPlateaConFamiliar');
   });
   
-  
   await test.step('Verify that vitalicios product exist and accessible', async () => {
     await page.getByText('Partidos').click();
     await page.waitForTimeout(1000);
@@ -36,7 +35,6 @@ test('Al realizar reserva con socio familiar que aplica para otro producto, dife
         },
         async () => {
           await page.getByRole('checkbox').first().click();
-          await page.pause();
         }
       );
     //Click continue
@@ -55,7 +53,6 @@ test('Al realizar reserva con socio familiar que aplica para otro producto, dife
       },
       async () => {
         //Do same map Flow as line 34
-        await page.pause();
         await page.locator('#path913').click();
         await page.waitForTimeout(1000);
         await page.getByRole('button', { name: 'Ir atrás' }).click();
@@ -63,7 +60,6 @@ test('Al realizar reserva con socio familiar que aplica para otro producto, dife
         await page.waitForTimeout(500);
         await page.locator('.css-175oi2r.r-1otgn73.r-1r0uh6').click();
         //Function to select and verify seat
-        await page.pause();
         await selectAndVerifySeat(page, '8119771', '177');
         await page.locator('div').filter({ hasText: /^Ubicación seleccionada$/ }).getByRole('button').click();
         //Click back twice
@@ -76,10 +72,8 @@ test('Al realizar reserva con socio familiar que aplica para otro producto, dife
 
   await test.step('Verify that the other familiy member has other sections visible and available', async () => {
     //Select Pablo Hugo and verify checkbox is checked
-    await page.pause();
     await page.getByRole('checkbox').nth(1).click();
-    await page.waitForTimeout(500);
-    await page.pause();
+    await page.waitForTimeout(1000);
     await expect(page.locator('div').filter({ hasText: /^Pablo Hugo Test_itzSocio #13274Sector$/ }).getByRole('checkbox')).toHaveAttribute('aria-checked', 'true');  
     //Assert other sections are green (available)
     await expect(page.locator('.stadium-map [id^=seccion-LV] *:not([id^=text])').first()).toHaveCSS('fill', 'rgb(45, 133, 80)');

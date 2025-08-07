@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 2
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "reporter": [
@@ -43,7 +43,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 2
+          "actualWorkers": 1
         },
         "id": "Desktop Chrome",
         "name": "Desktop Chrome",
@@ -59,7 +59,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 2
+          "actualWorkers": 1
         },
         "id": "Mobile Safari",
         "name": "Mobile Safari",
@@ -80,13 +80,13 @@
   },
   "suites": [
     {
-      "title": "e2e/matches/confirmacionFiltro/3.socioActivoFiltroDeudaNo.spec.ts",
-      "file": "e2e/matches/confirmacionFiltro/3.socioActivoFiltroDeudaNo.spec.ts",
+      "title": "e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts",
+      "file": "e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Socio pleno con deuda habilitado para Reserva Filtro debe visualizar warning al intentar reservar que le imposibilite",
+          "title": "Socio pleno con grupo familiar Reserva Web para si mismo, y tambien para familiar habilitado para Reserva Interna + AS",
           "ok": true,
           "tags": [],
           "tests": [
@@ -98,10 +98,10 @@
               "projectName": "Desktop Chrome",
               "results": [
                 {
-                  "workerIndex": 9,
+                  "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 6564,
+                  "duration": 12659,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -109,30 +109,42 @@
                   "steps": [
                     {
                       "title": "Login to the application",
-                      "duration": 3208
+                      "duration": 2603
                     },
                     {
-                      "title": "Verify that the user can not do the reservation and is redirected to the account page",
-                      "duration": 2880
+                      "title": "Navigate to test match and verify available products",
+                      "duration": 2544
+                    },
+                    {
+                      "title": "Assert checkbox behavior on reservation process",
+                      "duration": 1058
+                    },
+                    {
+                      "title": "Complete confirmation process",
+                      "duration": 2155
+                    },
+                    {
+                      "title": "Test Abono Solidario error handling",
+                      "duration": 3467
                     }
                   ],
-                  "startTime": "2025-08-05T19:02:07.589Z",
+                  "startTime": "2025-08-07T19:29:04.744Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionFi-30d68-eservar-que-le-imposibilite-Desktop-Chrome/test-finished-1.png"
+                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionWe-f20a2-ado-para-Reserva-Interna-AS-Desktop-Chrome/test-finished-1.png"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionFi-30d68-eservar-que-le-imposibilite-Desktop-Chrome/video.webm"
+                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionWe-f20a2-ado-para-Reserva-Interna-AS-Desktop-Chrome/video.webm"
                     },
                     {
                       "name": "trace",
                       "contentType": "application/zip",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionFi-30d68-eservar-que-le-imposibilite-Desktop-Chrome/trace.zip"
+                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionWe-f20a2-ado-para-Reserva-Interna-AS-Desktop-Chrome/trace.zip"
                     }
                   ]
                 }
@@ -140,68 +152,8 @@
               "status": "expected"
             }
           ],
-          "id": "42ef2552dfa78237d8d9-66e1b4eba4fb4076277c",
-          "file": "e2e/matches/confirmacionFiltro/3.socioActivoFiltroDeudaNo.spec.ts",
-          "line": 4,
-          "column": 5
-        },
-        {
-          "title": "Socio pleno con deuda habilitado para Reserva Filtro debe visualizar warning al intentar reservar que le imposibilite",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "Mobile Safari",
-              "projectName": "Mobile Safari",
-              "results": [
-                {
-                  "workerIndex": 10,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 7238,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "steps": [
-                    {
-                      "title": "Login to the application",
-                      "duration": 3943
-                    },
-                    {
-                      "title": "Verify that the user can not do the reservation and is redirected to the account page",
-                      "duration": 2740
-                    }
-                  ],
-                  "startTime": "2025-08-05T19:02:07.588Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionFi-30d68-eservar-que-le-imposibilite-Mobile-Safari/test-finished-1.png"
-                    },
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionFi-30d68-eservar-que-le-imposibilite-Mobile-Safari/video.webm"
-                    },
-                    {
-                      "name": "trace",
-                      "contentType": "application/zip",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionFi-30d68-eservar-que-le-imposibilite-Mobile-Safari/trace.zip"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "42ef2552dfa78237d8d9-ccddf6a7f00a6f09b7fe",
-          "file": "e2e/matches/confirmacionFiltro/3.socioActivoFiltroDeudaNo.spec.ts",
+          "id": "17d2568ecb7ede18370d-a0dd74ea6557c47ccfaa",
+          "file": "e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts",
           "line": 4,
           "column": 5
         }
@@ -210,9 +162,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-08-05T19:02:06.848Z",
-    "duration": 8390.622000000003,
-    "expected": 2,
+    "startTime": "2025-08-07T19:29:04.410Z",
+    "duration": 13796.866,
+    "expected": 1,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
