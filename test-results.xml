@@ -1,13 +1,13 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="8.942827">
-<testsuite name="e2e/abono/cederAbonoSinDatosBancarios.spec.ts" timestamp="2025-08-07T20:43:50.605Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="8.199" errors="0">
-<testcase name="Ceder abono y recuperarlo" classname="e2e/abono/cederAbonoSinDatosBancarios.spec.ts" time="8.199">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="13.272894">
+<testsuite name="e2e/payment/ContadorCuotasYCondicionalidadIrAPagar.spec.ts" timestamp="2025-08-11T15:39:57.739Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="10.718" errors="0">
+<testcase name="Validar contador de cuotas y condicionalidad de botón IR A PAGAR" classname="e2e/payment/ContadorCuotasYCondicionalidadIrAPagar.spec.ts" time="10.718">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results/e2e-abono-cederAbonoSinDat-e81d3-s-Ceder-abono-y-recuperarlo-Mobile-Safari/test-finished-1.png]]
+[[ATTACHMENT|test-results/e2e-payment-ContadorCuotas-11882-nalidad-de-botón-IR-A-PAGAR-Mobile-Safari/test-finished-1.png]]
 
-[[ATTACHMENT|test-results/e2e-abono-cederAbonoSinDat-e81d3-s-Ceder-abono-y-recuperarlo-Mobile-Safari/video.webm]]
+[[ATTACHMENT|test-results/e2e-payment-ContadorCuotas-11882-nalidad-de-botón-IR-A-PAGAR-Mobile-Safari/video.webm]]
 
-[[ATTACHMENT|test-results/e2e-abono-cederAbonoSinDat-e81d3-s-Ceder-abono-y-recuperarlo-Mobile-Safari/trace.zip]]
+[[ATTACHMENT|test-results/e2e-payment-ContadorCuotas-11882-nalidad-de-botón-IR-A-PAGAR-Mobile-Safari/trace.zip]]
 ]]>
 </system-out>
 </testcase>

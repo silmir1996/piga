@@ -80,13 +80,13 @@
   },
   "suites": [
     {
-      "title": "e2e/abono/cederAbonoSinDatosBancarios.spec.ts",
-      "file": "e2e/abono/cederAbonoSinDatosBancarios.spec.ts",
+      "title": "e2e/payment/ContadorCuotasYCondicionalidadIrAPagar.spec.ts",
+      "file": "e2e/payment/ContadorCuotasYCondicionalidadIrAPagar.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Ceder abono y recuperarlo",
+          "title": "Validar contador de cuotas y condicionalidad de botón IR A PAGAR",
           "ok": true,
           "tags": [],
           "tests": [
@@ -101,7 +101,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 8199,
+                  "duration": 10718,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -109,38 +109,34 @@
                   "steps": [
                     {
                       "title": "Login to the application",
-                      "duration": 3313
+                      "duration": 4174
                     },
                     {
-                      "title": "Navigate to ceder abono page",
-                      "duration": 2676
+                      "title": "Navigate to payment page and verify counter of cuotas",
+                      "duration": 5445
                     },
                     {
-                      "title": "Verify Ceder abono page and proper style",
-                      "duration": 693
-                    },
-                    {
-                      "title": "Verify warning is displayed and redirection to cargar datos bancarios page",
-                      "duration": 1071
+                      "title": "Verify behavior of counter of cuotas and conditional button Ir a pagar",
+                      "duration": 532
                     }
                   ],
-                  "startTime": "2025-08-07T20:43:51.030Z",
+                  "startTime": "2025-08-11T15:39:58.053Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-abono-cederAbonoSinDat-e81d3-s-Ceder-abono-y-recuperarlo-Mobile-Safari/test-finished-1.png"
+                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-payment-ContadorCuotas-11882-nalidad-de-botón-IR-A-PAGAR-Mobile-Safari/test-finished-1.png"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-abono-cederAbonoSinDat-e81d3-s-Ceder-abono-y-recuperarlo-Mobile-Safari/video.webm"
+                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-payment-ContadorCuotas-11882-nalidad-de-botón-IR-A-PAGAR-Mobile-Safari/video.webm"
                     },
                     {
                       "name": "trace",
                       "contentType": "application/zip",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-abono-cederAbonoSinDat-e81d3-s-Ceder-abono-y-recuperarlo-Mobile-Safari/trace.zip"
+                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-payment-ContadorCuotas-11882-nalidad-de-botón-IR-A-PAGAR-Mobile-Safari/trace.zip"
                     }
                   ]
                 }
@@ -148,8 +144,8 @@
               "status": "expected"
             }
           ],
-          "id": "03c215bf55e6cfcb49bb-b54c28246ae9ff489dea",
-          "file": "e2e/abono/cederAbonoSinDatosBancarios.spec.ts",
+          "id": "e088712824c9062c2f0c-58c132bd58b648f8524c",
+          "file": "e2e/payment/ContadorCuotasYCondicionalidadIrAPagar.spec.ts",
           "line": 4,
           "column": 5
         }
@@ -158,8 +154,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-08-07T20:43:50.591Z",
-    "duration": 8942.827,
+    "startTime": "2025-08-11T15:39:57.723Z",
+    "duration": 13272.894,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,

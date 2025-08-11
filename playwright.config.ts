@@ -23,14 +23,16 @@ export default defineConfig({
     video: 'on',
     trace: 'on',
     actionTimeout: 10000,
-    headless: process.env.MCP_HEADLESS === 'false'
+    headless: process.env.MCP_HEADLESS === 'false',
   },
 
   // Proyectos para diferentes navegadores y dispositivos
   projects: [
     {
       name: 'Desktop Chrome',
-      use: { ...devices['Desktop Chrome'] },
+      use: { 
+        ...devices['Desktop Chrome'],
+      },
     },
     // {
     //   name: 'Mobile Chrome',
@@ -38,7 +40,11 @@ export default defineConfig({
     // },
     {
       name: 'Mobile Safari',
-      use: { ...devices['iPhone 12'] },
+      use: { 
+        ...devices['iPhone 12'],
+        // Note: Safari doesn't support Chrome launch options
+        // Test isolation is handled through other mechanisms
+      },
     },
     // {
     //   name: 'Tablet',

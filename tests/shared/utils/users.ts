@@ -23,6 +23,10 @@ interface User {
   socioDAEstandoAlDia: string;
   socioDAConDeudaTarjeta: string;
   socioActivoAbonoSinDatosBancarios: string;
+  socioDAConDeudaPaypal: string;
+  socioDAconPaypalSinDeuda: string;
+  paypalEmail: string;
+  paypalPassword: string;
 }
 
 const users: User = {
@@ -48,7 +52,12 @@ const users: User = {
     socioContadorCuotas: "222478@mailinator.com",
     socioTarjetasInternacionales: "2214453@mailinator.com",
     socioDAEstandoAlDia: "163392@mailinator.com",
-    socioDAConDeudaTarjeta: "191264@mailinator.com"
+    socioDAConDeudaTarjeta: "191264@mailinator.com",
+    socioDAConDeudaPaypal: "2106042@mailinator.com",
+    socioDAconPaypalSinDeuda: "2215827@mailinator.com",
+    paypalEmail: "testpaypal10@mailinator.com",
+    paypalPassword: "Boca101010"
   };
+
   
 export { users };
