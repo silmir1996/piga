@@ -95,6 +95,7 @@ Para usar los comandos rápidos como `ts`, `t`, y `th`, agrega las siguientes l�
 alias ts="~/Documents/Paisanos/boca/mcp-playwright-boca/test-selector.sh"
 alias t="~/Documents/Paisanos/boca/mcp-playwright-boca/test-both.sh"
 alias th="~/Documents/Paisanos/boca/mcp-playwright-boca/test-both.sh headless"
+alias tm="~/Documents/Paisanos/boca/mcp-playwright-boca/test-mobile.sh"
 ```
 
 Luego recarga tu terminal:
@@ -145,6 +146,9 @@ t "ruta/al/test.spec.ts"
 
 # Ejecutar en ambos dispositivos en modo headless
 th "ruta/al/test.spec.ts"
+
+# Ejecutar solo en mobile
+tm "ruta/al/test.spec.ts"
 ```
 
 ### Generación de Código

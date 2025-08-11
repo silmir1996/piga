@@ -11,6 +11,7 @@ test('Socio adherente validar que visualice producto de abono solidario solament
     await page.getByText('Partidos').click();
     await expect(page.getByText('Vitalicios')).not.toBeVisible();
     await expect(page.locator('body')).not.toContainText('TEST AUTOMATION (No utilizar)');
+    await page.waitForTimeout(500);
     await page.getByTestId('evento-filtro-automation-no-utilizar-ver-mas').click();
     await page.locator('div').filter({ hasText: /^NECESITÁS TENER LA CUOTA SOCIAL AL DÍA$/ }).getByRole('button').click();
     await expect(page.getByText('Abono SolidarioAdherente01/07/25, 00:00 hsObtener Plateas')).toBeVisible();

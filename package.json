@@ -13,7 +13,10 @@
     "test:mobile": "npx playwright test --project=\"Mobile Chrome\"",
     "test:mobile-safari": "npx playwright test --project=\"Mobile Safari\"",
     "test:all-devices": "npx playwright test",
-    "test:desktop-mobile": "npx playwright test \"tests/e2e/matches/vitalicios/reservaInterna/4.reservaGeneralesConValidacion.spec.ts\" --project=\"Desktop Chrome\" && npx playwright test \"tests/e2e/matches/vitalicios/reservaInterna/4.reservaGeneralesConValidacion.spec.ts\" --project=\"Mobile Safari\""
+    "test:desktop-mobile": "npx playwright test \"tests/e2e/matches/vitalicios/reservaInterna/4.reservaGeneralesConValidacion.spec.ts\" --project=\"Desktop Chrome\" && npx playwright test \"tests/e2e/matches/vitalicios/reservaInterna/4.reservaGeneralesConValidacion.spec.ts\" --project=\"Mobile Safari\"",
+    "mobile": "npx playwright test --project=\"Mobile Safari\"",
+    "mobileh": "npx playwright test --project=\"Mobile Safari\" --headed",
+    "mobiles": "npx playwright test --project=\"Mobile Safari\" --headed"
   },
   "keywords": [],
   "author": "",

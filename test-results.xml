@@ -1,13 +1,13 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="13.272894">
-<testsuite name="e2e/payment/ContadorCuotasYCondicionalidadIrAPagar.spec.ts" timestamp="2025-08-11T15:39:57.739Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="10.718" errors="0">
-<testcase name="Validar contador de cuotas y condicionalidad de botón IR A PAGAR" classname="e2e/payment/ContadorCuotasYCondicionalidadIrAPagar.spec.ts" time="10.718">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="11.432217000000001">
+<testsuite name="e2e/matches/confirmacionFiltro/1.socioAdherenteNo.spec.ts" timestamp="2025-08-11T21:17:33.118Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="10.794" errors="0">
+<testcase name="Socio adherente validar que visualice producto de abono solidario solamente" classname="e2e/matches/confirmacionFiltro/1.socioAdherenteNo.spec.ts" time="10.794">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results/e2e-payment-ContadorCuotas-11882-nalidad-de-botón-IR-A-PAGAR-Mobile-Safari/test-finished-1.png]]
+[[ATTACHMENT|test-results/e2e-matches-confirmacionFi-4ccec-e-abono-solidario-solamente-Mobile-Safari/test-finished-1.png]]
 
-[[ATTACHMENT|test-results/e2e-payment-ContadorCuotas-11882-nalidad-de-botón-IR-A-PAGAR-Mobile-Safari/video.webm]]
+[[ATTACHMENT|test-results/e2e-matches-confirmacionFi-4ccec-e-abono-solidario-solamente-Mobile-Safari/video.webm]]
 
-[[ATTACHMENT|test-results/e2e-payment-ContadorCuotas-11882-nalidad-de-botón-IR-A-PAGAR-Mobile-Safari/trace.zip]]
+[[ATTACHMENT|test-results/e2e-matches-confirmacionFi-4ccec-e-abono-solidario-solamente-Mobile-Safari/trace.zip]]
 ]]>
 </system-out>
 </testcase>

@@ -80,13 +80,13 @@
   },
   "suites": [
     {
-      "title": "e2e/payment/ContadorCuotasYCondicionalidadIrAPagar.spec.ts",
-      "file": "e2e/payment/ContadorCuotasYCondicionalidadIrAPagar.spec.ts",
+      "title": "e2e/matches/confirmacionFiltro/1.socioAdherenteNo.spec.ts",
+      "file": "e2e/matches/confirmacionFiltro/1.socioAdherenteNo.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Validar contador de cuotas y condicionalidad de botón IR A PAGAR",
+          "title": "Socio adherente validar que visualice producto de abono solidario solamente",
           "ok": true,
           "tags": [],
           "tests": [
@@ -101,7 +101,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 10718,
+                  "duration": 10794,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -109,34 +109,30 @@
                   "steps": [
                     {
                       "title": "Login to the application",
-                      "duration": 4174
+                      "duration": 3430
                     },
                     {
-                      "title": "Navigate to payment page and verify counter of cuotas",
-                      "duration": 5445
-                    },
-                    {
-                      "title": "Verify behavior of counter of cuotas and conditional button Ir a pagar",
-                      "duration": 532
+                      "title": "Verify that the user does not see confirmacion products",
+                      "duration": 6945
                     }
                   ],
-                  "startTime": "2025-08-11T15:39:58.053Z",
+                  "startTime": "2025-08-11T21:17:33.432Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-payment-ContadorCuotas-11882-nalidad-de-botón-IR-A-PAGAR-Mobile-Safari/test-finished-1.png"
+                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionFi-4ccec-e-abono-solidario-solamente-Mobile-Safari/test-finished-1.png"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-payment-ContadorCuotas-11882-nalidad-de-botón-IR-A-PAGAR-Mobile-Safari/video.webm"
+                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionFi-4ccec-e-abono-solidario-solamente-Mobile-Safari/video.webm"
                     },
                     {
                       "name": "trace",
                       "contentType": "application/zip",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-payment-ContadorCuotas-11882-nalidad-de-botón-IR-A-PAGAR-Mobile-Safari/trace.zip"
+                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionFi-4ccec-e-abono-solidario-solamente-Mobile-Safari/trace.zip"
                     }
                   ]
                 }
@@ -144,8 +140,8 @@
               "status": "expected"
             }
           ],
-          "id": "e088712824c9062c2f0c-58c132bd58b648f8524c",
-          "file": "e2e/payment/ContadorCuotasYCondicionalidadIrAPagar.spec.ts",
+          "id": "39e8a25e552d25d8a536-8ac1d4b9ab751502042a",
+          "file": "e2e/matches/confirmacionFiltro/1.socioAdherenteNo.spec.ts",
           "line": 4,
           "column": 5
         }
@@ -154,8 +150,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-08-11T15:39:57.723Z",
-    "duration": 13272.894,
+    "startTime": "2025-08-11T21:17:33.103Z",
+    "duration": 11432.217,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,
