@@ -31,7 +31,7 @@ export default defineConfig({
     video: 'on',
     trace: 'on',
     actionTimeout: 10000,
-    headless: process.env.MCP_HEADLESS === 'false',
+    headless: process.env.MCP_HEADLESS !== 'false',
     // Ignore SSL certificate errors for staging environments
     ignoreHTTPSErrors: true,
   },
