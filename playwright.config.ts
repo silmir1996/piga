@@ -4,6 +4,14 @@ import dotenv from 'dotenv';
 // Cargar variables de entorno
 dotenv.config({ path: '.env.hybrid' });
 
+// Fallback environment variables for CI
+if (!process.env.BASE_URL_STAGING) {
+  process.env.BASE_URL_STAGING = 'https://bocasocios-tst.bocajuniors.com.ar';
+}
+if (!process.env.MCP_HEADLESS) {
+  process.env.MCP_HEADLESS = 'true';
+}
+
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
@@ -24,6 +32,8 @@ export default defineConfig({
     trace: 'on',
     actionTimeout: 10000,
     headless: process.env.MCP_HEADLESS === 'false',
+    // Ignore SSL certificate errors for staging environments
+    ignoreHTTPSErrors: true,
   },
 
   // Proyectos para diferentes navegadores y dispositivos

@@ -18,6 +18,9 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
+      env:
+        BASE_URL_STAGING: https://bocasocios-tst.bocajuniors.com.ar
+        MCP_HEADLESS: true
       run: npx playwright test
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
