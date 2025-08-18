@@ -1,13 +1,104 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="11.432217000000001">
-<testsuite name="e2e/matches/confirmacionFiltro/1.socioAdherenteNo.spec.ts" timestamp="2025-08-11T21:17:33.118Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="10.794" errors="0">
-<testcase name="Socio adherente validar que visualice producto de abono solidario solamente" classname="e2e/matches/confirmacionFiltro/1.socioAdherenteNo.spec.ts" time="10.794">
+<testsuites id="" name="" tests="5" failures="1" skipped="0" errors="0" time="25.476759">
+<testsuite name="e2e/matches/confirmacionWeb/1.socioAdherenteNo.spec.ts" timestamp="2025-08-18T16:48:52.307Z" hostname="Desktop Chrome" tests="1" failures="0" skipped="0" time="13.333" errors="0">
+<testcase name="Socio adherente no visualice productos de confirmacion " classname="e2e/matches/confirmacionWeb/1.socioAdherenteNo.spec.ts" time="13.333">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results/e2e-matches-confirmacionFi-4ccec-e-abono-solidario-solamente-Mobile-Safari/test-finished-1.png]]
+[[ATTACHMENT|test-results/e2e-matches-confirmacionWe-e32e6--productos-de-confirmacion--Desktop-Chrome/test-finished-1.png]]
 
-[[ATTACHMENT|test-results/e2e-matches-confirmacionFi-4ccec-e-abono-solidario-solamente-Mobile-Safari/video.webm]]
+[[ATTACHMENT|test-results/e2e-matches-confirmacionWe-e32e6--productos-de-confirmacion--Desktop-Chrome/video.webm]]
 
-[[ATTACHMENT|test-results/e2e-matches-confirmacionFi-4ccec-e-abono-solidario-solamente-Mobile-Safari/trace.zip]]
+[[ATTACHMENT|test-results/e2e-matches-confirmacionWe-e32e6--productos-de-confirmacion--Desktop-Chrome/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/confirmacionWeb/2.socioActivoAbonoNo.spec.ts" timestamp="2025-08-18T16:48:52.307Z" hostname="Desktop Chrome" tests="1" failures="0" skipped="0" time="12.38" errors="0">
+<testcase name="Socio Activo con Abono no visualice productos de confirmacion" classname="e2e/matches/confirmacionWeb/2.socioActivoAbonoNo.spec.ts" time="12.38">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/e2e-matches-confirmacionWe-1a123-e-productos-de-confirmacion-Desktop-Chrome/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/e2e-matches-confirmacionWe-1a123-e-productos-de-confirmacion-Desktop-Chrome/video.webm]]
+
+[[ATTACHMENT|test-results/e2e-matches-confirmacionWe-1a123-e-productos-de-confirmacion-Desktop-Chrome/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/confirmacionWeb/3.socioActivoDeudaNo.spec.ts" timestamp="2025-08-18T16:48:52.307Z" hostname="Desktop Chrome" tests="1" failures="0" skipped="0" time="10.749" errors="0">
+<testcase name="Socio pleno con deuda debe visualizar warning al intentar reservar que le imposibilite" classname="e2e/matches/confirmacionWeb/3.socioActivoDeudaNo.spec.ts" time="10.749">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/e2e-matches-confirmacionWe-a72fa-eservar-que-le-imposibilite-Desktop-Chrome/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/e2e-matches-confirmacionWe-a72fa-eservar-que-le-imposibilite-Desktop-Chrome/video.webm]]
+
+[[ATTACHMENT|test-results/e2e-matches-confirmacionWe-a72fa-eservar-que-le-imposibilite-Desktop-Chrome/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/confirmacionWeb/4.socioVitaAbonoNo.spec.ts" timestamp="2025-08-18T16:48:52.307Z" hostname="Desktop Chrome" tests="1" failures="0" skipped="0" time="8.675" errors="0">
+<testcase name="Socio Vitalicio con abono no visualice productos de confirmacion" classname="e2e/matches/confirmacionWeb/4.socioVitaAbonoNo.spec.ts" time="8.675">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/e2e-matches-confirmacionWe-6e46c-e-productos-de-confirmacion-Desktop-Chrome/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/e2e-matches-confirmacionWe-6e46c-e-productos-de-confirmacion-Desktop-Chrome/video.webm]]
+
+[[ATTACHMENT|test-results/e2e-matches-confirmacionWe-6e46c-e-productos-de-confirmacion-Desktop-Chrome/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts" timestamp="2025-08-18T16:48:52.307Z" hostname="Desktop Chrome" tests="1" failures="1" skipped="0" time="15.827" errors="0">
+<testcase name="Socio pleno con grupo familiar Reserva Web para si mismo, y tambien para familiar habilitado para Reserva Interna + AS" classname="e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts" time="15.827">
+<failure message="5.reservaWebConGrupoFamiliarReservaInterna.spec.ts:4:5 Socio pleno con grupo familiar Reserva Web para si mismo, y tambien para familiar habilitado para Reserva Interna + AS" type="FAILURE">
+<![CDATA[  [Desktop Chrome] › e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts:4:5 › Socio pleno con grupo familiar Reserva Web para si mismo, y tambien para familiar habilitado para Reserva Interna + AS › Assert checkbox behavior on reservation process 
+
+    TimeoutError: locator.click: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('div').filter({ hasText: /^Hector Anibal Test_adaSocio #169113$/ }).nth(2)
+
+
+      25 |     // Handle checkbox interaction
+      26 |     await expect(page.getByRole('button', { name: 'Reservar' })).not.toBeEnabled();
+    > 27 |     await page.locator('div').filter({ hasText: /^Hector Anibal Test_adaSocio #169113$/ }).nth(2).click();
+         |                                                                                                   ^
+      28 |     await expect(page.getByRole('button', { name: 'Reservar' })).toBeEnabled();
+      29 |     await page.locator('div').filter({ hasText: /^Marcelo Fernando Test_adaSocio #169100$/ }).nth(2).click();
+      30 |     await expect(page.getByRole('button', { name: 'Reservar' })).toBeEnabled();
+        at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts:27:99
+        at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts:21:1
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/e2e-matches-confirmacionWe-f20a2-ado-para-Reserva-Interna-AS-Desktop-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/e2e-matches-confirmacionWe-f20a2-ado-para-Reserva-Interna-AS-Desktop-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-matches-confirmacionWe-f20a2-ado-para-Reserva-Interna-AS-Desktop-Chrome/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/e2e-matches-confirmacionWe-f20a2-ado-para-Reserva-Interna-AS-Desktop-Chrome/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/e2e-matches-confirmacionWe-f20a2-ado-para-Reserva-Interna-AS-Desktop-Chrome/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/e2e-matches-confirmacionWe-f20a2-ado-para-Reserva-Interna-AS-Desktop-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/e2e-matches-confirmacionWe-f20a2-ado-para-Reserva-Interna-AS-Desktop-Chrome/video.webm]]
+
+[[ATTACHMENT|test-results/e2e-matches-confirmacionWe-f20a2-ado-para-Reserva-Interna-AS-Desktop-Chrome/error-context.md]]
+
+[[ATTACHMENT|test-results/e2e-matches-confirmacionWe-f20a2-ado-para-Reserva-Interna-AS-Desktop-Chrome/trace.zip]]
 ]]>
 </system-out>
 </testcase>
