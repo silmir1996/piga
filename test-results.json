@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 4
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "reporter": [
@@ -43,7 +43,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 4
+          "actualWorkers": 1
         },
         "id": "Desktop Chrome",
         "name": "Desktop Chrome",
@@ -59,7 +59,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 4
+          "actualWorkers": 1
         },
         "id": "Mobile Safari",
         "name": "Mobile Safari",
@@ -80,28 +80,28 @@
   },
   "suites": [
     {
-      "title": "e2e/matches/confirmacionWeb/1.socioAdherenteNo.spec.ts",
-      "file": "e2e/matches/confirmacionWeb/1.socioAdherenteNo.spec.ts",
+      "title": "e2e/payment/paypal/paypalAdherirDACancelarloYCancelarAcuerdo.spec.ts",
+      "file": "e2e/payment/paypal/paypalAdherirDACancelarloYCancelarAcuerdo.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Socio adherente no visualice productos de confirmacion ",
+          "title": "Adherir DA cancelarlo y cancelar acuerdo",
           "ok": true,
           "tags": [],
           "tests": [
             {
-              "timeout": 30000,
+              "timeout": 120000,
               "annotations": [],
               "expectedStatus": "passed",
-              "projectId": "Desktop Chrome",
-              "projectName": "Desktop Chrome",
+              "projectId": "Mobile Safari",
+              "projectName": "Mobile Safari",
               "results": [
                 {
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 13333,
+                  "duration": 52941,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -109,30 +109,72 @@
                   "steps": [
                     {
                       "title": "Login to the application",
-                      "duration": 6453
+                      "duration": 3385
                     },
                     {
-                      "title": "Verify that the user does not see confirmacion products",
-                      "duration": 6468
+                      "title": "Navigar a flujo de pagos y verificar que no hay deuda",
+                      "duration": 2278
+                    },
+                    {
+                      "title": "Iniciar proceso de adherir DA con manejo de popup de PayPal",
+                      "duration": 3029
+                    },
+                    {
+                      "title": "Handle conditional PayPal flow",
+                      "duration": 14521
+                    },
+                    {
+                      "title": "Verificar que se adhirió DA",
+                      "duration": 1081
+                    },
+                    {
+                      "title": "Cancelar Acuerdo de pago y verificar que el DA también se cancela",
+                      "duration": 1423
+                    },
+                    {
+                      "title": "Iniciar adherir DA otra vez para verificar que el acuerdo no se cancela automáticamente al darse de baja luego",
+                      "duration": 5263
+                    },
+                    {
+                      "title": "Handle conditional PayPal flow (second time)",
+                      "duration": 18791
+                    },
+                    {
+                      "title": "Cancelar DA y verificar que el acuerdo no se cancela",
+                      "duration": 199
+                    },
+                    {
+                      "title": "Cancelar acuerdo y verificar que no se visualice",
+                      "duration": 2031
                     }
                   ],
-                  "startTime": "2025-08-18T16:48:52.676Z",
+                  "startTime": "2025-08-18T21:27:05.742Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionWe-e32e6--productos-de-confirmacion--Desktop-Chrome/test-finished-1.png"
+                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-payment-paypal-paypalA-3750e-ncelarlo-y-cancelar-acuerdo-Mobile-Safari/test-finished-1.png"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionWe-e32e6--productos-de-confirmacion--Desktop-Chrome/video.webm"
+                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-payment-paypal-paypalA-3750e-ncelarlo-y-cancelar-acuerdo-Mobile-Safari/video-2.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-payment-paypal-paypalA-3750e-ncelarlo-y-cancelar-acuerdo-Mobile-Safari/video-1.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-payment-paypal-paypalA-3750e-ncelarlo-y-cancelar-acuerdo-Mobile-Safari/video.webm"
                     },
                     {
                       "name": "trace",
                       "contentType": "application/zip",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionWe-e32e6--productos-de-confirmacion--Desktop-Chrome/trace.zip"
+                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-payment-paypal-paypalA-3750e-ncelarlo-y-cancelar-acuerdo-Mobile-Safari/trace.zip"
                     }
                   ]
                 }
@@ -140,323 +182,8 @@
               "status": "expected"
             }
           ],
-          "id": "775792c45a00028f4337-5f8ade27ba4a851f7cf4",
-          "file": "e2e/matches/confirmacionWeb/1.socioAdherenteNo.spec.ts",
-          "line": 4,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "e2e/matches/confirmacionWeb/2.socioActivoAbonoNo.spec.ts",
-      "file": "e2e/matches/confirmacionWeb/2.socioActivoAbonoNo.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "Socio Activo con Abono no visualice productos de confirmacion",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "Desktop Chrome",
-              "projectName": "Desktop Chrome",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 12380,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "steps": [
-                    {
-                      "title": "Login to the application",
-                      "duration": 6488
-                    },
-                    {
-                      "title": "Verify that the user does not see confirmacion product",
-                      "duration": 5220
-                    }
-                  ],
-                  "startTime": "2025-08-18T16:48:52.675Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionWe-1a123-e-productos-de-confirmacion-Desktop-Chrome/test-finished-1.png"
-                    },
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionWe-1a123-e-productos-de-confirmacion-Desktop-Chrome/video.webm"
-                    },
-                    {
-                      "name": "trace",
-                      "contentType": "application/zip",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionWe-1a123-e-productos-de-confirmacion-Desktop-Chrome/trace.zip"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "11fc0a7666af29663448-18d57780ab7ebafdfea3",
-          "file": "e2e/matches/confirmacionWeb/2.socioActivoAbonoNo.spec.ts",
-          "line": 4,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "e2e/matches/confirmacionWeb/3.socioActivoDeudaNo.spec.ts",
-      "file": "e2e/matches/confirmacionWeb/3.socioActivoDeudaNo.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "Socio pleno con deuda debe visualizar warning al intentar reservar que le imposibilite",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "Desktop Chrome",
-              "projectName": "Desktop Chrome",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
-                  "status": "passed",
-                  "duration": 10749,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "steps": [
-                    {
-                      "title": "Login to the application",
-                      "duration": 6621
-                    },
-                    {
-                      "title": "Verify that the user can not do the reservation and is redirected to the account page",
-                      "duration": 3670
-                    }
-                  ],
-                  "startTime": "2025-08-18T16:48:52.677Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionWe-a72fa-eservar-que-le-imposibilite-Desktop-Chrome/test-finished-1.png"
-                    },
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionWe-a72fa-eservar-que-le-imposibilite-Desktop-Chrome/video.webm"
-                    },
-                    {
-                      "name": "trace",
-                      "contentType": "application/zip",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionWe-a72fa-eservar-que-le-imposibilite-Desktop-Chrome/trace.zip"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "4d00bc7baa78f32e1882-43998dde0ef62dfdc14a",
-          "file": "e2e/matches/confirmacionWeb/3.socioActivoDeudaNo.spec.ts",
-          "line": 4,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "e2e/matches/confirmacionWeb/4.socioVitaAbonoNo.spec.ts",
-      "file": "e2e/matches/confirmacionWeb/4.socioVitaAbonoNo.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "Socio Vitalicio con abono no visualice productos de confirmacion",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "Desktop Chrome",
-              "projectName": "Desktop Chrome",
-              "results": [
-                {
-                  "workerIndex": 3,
-                  "parallelIndex": 3,
-                  "status": "passed",
-                  "duration": 8675,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "steps": [
-                    {
-                      "title": "Login to the application",
-                      "duration": 6091
-                    },
-                    {
-                      "title": "Verify that the user does not see Vitalicios products inside vitalicios match",
-                      "duration": 2201
-                    }
-                  ],
-                  "startTime": "2025-08-18T16:48:52.676Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionWe-6e46c-e-productos-de-confirmacion-Desktop-Chrome/test-finished-1.png"
-                    },
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionWe-6e46c-e-productos-de-confirmacion-Desktop-Chrome/video.webm"
-                    },
-                    {
-                      "name": "trace",
-                      "contentType": "application/zip",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionWe-6e46c-e-productos-de-confirmacion-Desktop-Chrome/trace.zip"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "d7d6993567aa6ea755ef-8f6d461af5bceafc3b52",
-          "file": "e2e/matches/confirmacionWeb/4.socioVitaAbonoNo.spec.ts",
-          "line": 4,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts",
-      "file": "e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "Socio pleno con grupo familiar Reserva Web para si mismo, y tambien para familiar habilitado para Reserva Interna + AS",
-          "ok": false,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "Desktop Chrome",
-              "projectName": "Desktop Chrome",
-              "results": [
-                {
-                  "workerIndex": 3,
-                  "parallelIndex": 3,
-                  "status": "failed",
-                  "duration": 15827,
-                  "error": {
-                    "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div').filter({ hasText: /^Hector Anibal Test_adaSocio #169113$/ }).nth(2)\u001b[22m\n",
-                    "stack": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div').filter({ hasText: /^Hector Anibal Test_adaSocio #169113$/ }).nth(2)\u001b[22m\n\n    at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts:27:99\n    at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts:21:1",
-                    "location": {
-                      "file": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts",
-                      "column": 99,
-                      "line": 27
-                    },
-                    "snippet": "\u001b[0m \u001b[90m 25 |\u001b[39m     \u001b[90m// Handle checkbox interaction\u001b[39m\n \u001b[90m 26 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Reservar'\u001b[39m }))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeEnabled()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'div'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/^Hector Anibal Test_adaSocio #169113$/\u001b[39m })\u001b[33m.\u001b[39mnth(\u001b[35m2\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 28 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Reservar'\u001b[39m }))\u001b[33m.\u001b[39mtoBeEnabled()\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'div'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/^Marcelo Fernando Test_adaSocio #169100$/\u001b[39m })\u001b[33m.\u001b[39mnth(\u001b[35m2\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Reservar'\u001b[39m }))\u001b[33m.\u001b[39mtoBeEnabled()\u001b[33m;\u001b[39m\u001b[0m"
-                  },
-                  "errors": [
-                    {
-                      "location": {
-                        "file": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts",
-                        "column": 99,
-                        "line": 27
-                      },
-                      "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div').filter({ hasText: /^Hector Anibal Test_adaSocio #169113$/ }).nth(2)\u001b[22m\n\n\n\u001b[0m \u001b[90m 25 |\u001b[39m     \u001b[90m// Handle checkbox interaction\u001b[39m\n \u001b[90m 26 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Reservar'\u001b[39m }))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeEnabled()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'div'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/^Hector Anibal Test_adaSocio #169113$/\u001b[39m })\u001b[33m.\u001b[39mnth(\u001b[35m2\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 28 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Reservar'\u001b[39m }))\u001b[33m.\u001b[39mtoBeEnabled()\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'div'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/^Marcelo Fernando Test_adaSocio #169100$/\u001b[39m })\u001b[33m.\u001b[39mnth(\u001b[35m2\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Reservar'\u001b[39m }))\u001b[33m.\u001b[39mtoBeEnabled()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts:27:99\u001b[22m\n\u001b[2m    at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts:21:1\u001b[22m"
-                    }
-                  ],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "steps": [
-                    {
-                      "title": "Login to the application",
-                      "duration": 2455
-                    },
-                    {
-                      "title": "Navigate to test match and verify available products",
-                      "duration": 2574
-                    },
-                    {
-                      "title": "Assert checkbox behavior on reservation process",
-                      "duration": 10410,
-                      "error": {
-                        "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div').filter({ hasText: /^Hector Anibal Test_adaSocio #169113$/ }).nth(2)\u001b[22m\n",
-                        "stack": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('div').filter({ hasText: /^Hector Anibal Test_adaSocio #169113$/ }).nth(2)\u001b[22m\n\n    at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts:27:99\n    at /Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts:21:1",
-                        "location": {
-                          "file": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts",
-                          "column": 99,
-                          "line": 27
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 25 |\u001b[39m     \u001b[90m// Handle checkbox interaction\u001b[39m\n \u001b[90m 26 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Reservar'\u001b[39m }))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeEnabled()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 27 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'div'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/^Hector Anibal Test_adaSocio #169113$/\u001b[39m })\u001b[33m.\u001b[39mnth(\u001b[35m2\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 28 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Reservar'\u001b[39m }))\u001b[33m.\u001b[39mtoBeEnabled()\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'div'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/^Marcelo Fernando Test_adaSocio #169100$/\u001b[39m })\u001b[33m.\u001b[39mnth(\u001b[35m2\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Reservar'\u001b[39m }))\u001b[33m.\u001b[39mtoBeEnabled()\u001b[33m;\u001b[39m\u001b[0m"
-                      }
-                    }
-                  ],
-                  "startTime": "2025-08-18T16:49:01.789Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionWe-f20a2-ado-para-Reserva-Interna-AS-Desktop-Chrome/test-failed-1.png"
-                    },
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionWe-f20a2-ado-para-Reserva-Interna-AS-Desktop-Chrome/video.webm"
-                    },
-                    {
-                      "name": "error-context",
-                      "contentType": "text/markdown",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionWe-f20a2-ado-para-Reserva-Interna-AS-Desktop-Chrome/error-context.md"
-                    },
-                    {
-                      "name": "trace",
-                      "contentType": "application/zip",
-                      "path": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/test-results/e2e-matches-confirmacionWe-f20a2-ado-para-Reserva-Interna-AS-Desktop-Chrome/trace.zip"
-                    }
-                  ],
-                  "errorLocation": {
-                    "file": "/Users/chrisfiore/Documents/Paisanos/boca/mcp-playwright-boca/tests/e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts",
-                    "column": 99,
-                    "line": 27
-                  }
-                }
-              ],
-              "status": "unexpected"
-            }
-          ],
-          "id": "17d2568ecb7ede18370d-a0dd74ea6557c47ccfaa",
-          "file": "e2e/matches/confirmacionWeb/5.reservaWebConGrupoFamiliarReservaInterna.spec.ts",
+          "id": "cb0bbd22b789326c7892-57d06dec66e8a94534b1",
+          "file": "e2e/payment/paypal/paypalAdherirDACancelarloYCancelarAcuerdo.spec.ts",
           "line": 4,
           "column": 5
         }
@@ -465,11 +192,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-08-18T16:48:52.288Z",
-    "duration": 25476.759000000002,
-    "expected": 4,
+    "startTime": "2025-08-18T21:27:05.424Z",
+    "duration": 54013.988999999994,
+    "expected": 1,
     "skipped": 0,
-    "unexpected": 1,
+    "unexpected": 0,
     "flaky": 0
   }
 }

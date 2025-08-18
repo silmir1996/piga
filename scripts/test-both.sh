@@ -8,7 +8,7 @@ test-both() {
     # If first arg is not a recognized mode, treat it as the test file
     if [[ "$mode" != "headed" && "$mode" != "headless" ]]; then
         test_file="$mode"
-        mode="headless"
+        mode="headed"  # Default to headed mode for 't' command
     fi
 
     if [ -z "$test_file" ]; then

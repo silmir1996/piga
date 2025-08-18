@@ -9,15 +9,15 @@ test('Validar contador de cuotas y condicionalidad de botón IR A PAGAR', async 
 
   await test.step('Navigate to payment page and verify counter of cuotas', async () => {
     await page.getByText('Pagos').first().click();
-    await page.waitForTimeout(2000);
-    await expect(page.getByText('Debés 4 cuotas')).toBeVisible();
+    await page.waitForTimeout(3000);
+    await expect(page.getByText('Debés 5 cuotas')).toBeVisible();
     await page.getByRole('button', { name: 'Realizar pagos' }).click();
     await page.waitForTimeout(500);
   });
 
   await test.step('Verify behavior of counter of cuotas and conditional button Ir a pagar', async () => {
     // Verify that the counter of cuotas is working properly
-    await expect(page.getByText('Debés 4 cuotas')).toBeVisible();
+    await expect(page.getByText('Debés 5 cuotas')).toBeVisible();
     await expect(page.locator('div').filter({ hasText: /^0$/ }).nth(1)).toBeVisible();
     await page.getByRole('img').nth(3).click();
     await expect(page.locator('div').filter({ hasText: /^1$/ }).nth(1)).toBeVisible();

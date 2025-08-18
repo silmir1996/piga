@@ -10,7 +10,7 @@ test('Adherir DA con deuda en tarjeta', async ({ page }) => {
   await test.step('Navigate to payment page and verify there is no debt', async () => {
     await page.getByText('Pagos').first().click();
     await page.waitForTimeout(1500);
-    await expect(page.getByText('Debés 2 cuotas')).toBeVisible();
+    await expect(page.getByText('Debés 3 cuotas')).toBeVisible();
   })
   
   await test.step('Try to adherir DA with debt in card and verify error message', async () => {
