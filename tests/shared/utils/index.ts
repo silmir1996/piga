@@ -7,89 +7,18 @@ export * from './popup-handler';
 export * from './test-setup';
 
 /**
- * Busca y hace click en el botón "Adherir a débito automático" usando múltiples estrategias
- * @param page - La página de Playwright
- * @param options - Opciones de configuración
+ * Registra los botones disponibles para debug
  */
-export async function clickAdherirDAButton(
-  page: any,
-  options: {
-    timeout?: number;
-    which?: 'first' | 'last' | number;
-  } = {}
-) {
-  const { timeout = 10000, which = 'first' } = options;
-
-  // Múltiples selectores para el botón
-  const selectors = [
-    'button:has-text("Adherir a débito automático")',
-    '[data-testid*="adherir"]',
-    'button[aria-label*="Adherir"]',
-    '.adherir-button',
-    'button:has-text("Adherir")',
-    'button:has-text("débito automático")',
-    'input[value*="Adherir"]',
-    '[class*="adherir"]',
-    '[id*="adherir"]'
-  ];
-
-  for (const selector of selectors) {
-    try {
-      const buttons = page.locator(selector);
-      const count = await buttons.count();
-      
-      if (count > 0) {
-        let targetButton;
-        if (which === 'first') {
-          targetButton = buttons.first();
-        } else if (which === 'last') {
-          targetButton = buttons.last();
-        } else if (typeof which === 'number') {
-          targetButton = buttons.nth(which);
-        }
-
-        if (await targetButton.isVisible({ timeout: 2000 })) {
-          await targetButton.click();
-          return true;
-        }
-      }
-    } catch (e) {
-      continue;
-    }
-  }
-
-  // Fallback con roles
-  try {
-    const roleButtons = page.getByRole('button', { name: /adherir.*débito.*automático/i });
-    const count = await roleButtons.count();
-    
-    if (count > 0) {
-      let targetButton;
-      if (which === 'first') {
-        targetButton = roleButtons.first();
-      } else if (which === 'last') {
-        targetButton = roleButtons.last();
-      } else if (typeof which === 'number') {
-        targetButton = roleButtons.nth(which);
-      }
-
-      await targetButton.click();
-      return true;
-    }
-  } catch (e) {
-    // Continue to error handling
-  }
-
-  // Si no se encuentra, mostrar botones disponibles
+async function logAvailableButtons(page: any): Promise<void> {
   const allButtons = await page.locator('button').all();
   console.log(`❌ No se encontró botón "Adherir a débito automático". Botones disponibles (${allButtons.length}):`);
-  for (let i = 0; i < Math.min(allButtons.length, 15); i++) {
+  
+  const maxButtonsToShow = 15;
+  for (let i = 0; i < Math.min(allButtons.length, maxButtonsToShow); i++) {
     const text = await allButtons[i].textContent().catch(() => '');
     const ariaLabel = await allButtons[i].getAttribute('aria-label').catch(() => '');
     console.log(`  ${i + 1}. texto: "${text.trim()}" | aria-label: "${ariaLabel}"`);
   }
-
-  throw new Error('No se pudo encontrar el botón "Adherir a débito automático"');
 }
 
 /**
@@ -219,13 +148,13 @@ export async function clearPayPalCache(page: any, context?: any) {
     // Limpiar cookies específicas de PayPal
     if (context) {
       const cookies = await context.cookies();
-      const paypalCookies = cookies.filter(cookie => 
+      const paypalCookies = cookies.filter((cookie: any) => 
         cookie.domain.includes('paypal') || 
         cookie.name.toLowerCase().includes('paypal') ||
         cookie.domain.includes('pp')
       );
       
-      for (const cookie: any of paypalCookies) {
+      for (const cookie of paypalCookies) {
         await context.clearCookies({
           domain: cookie.domain,
           name: cookie.name

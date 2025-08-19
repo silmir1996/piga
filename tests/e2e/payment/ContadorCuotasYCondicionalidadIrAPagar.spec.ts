@@ -9,10 +9,10 @@ test('Validar contador de cuotas y condicionalidad de botón IR A PAGAR', async 
 
   await test.step('Navigate to payment page and verify counter of cuotas', async () => {
     await page.getByText('Pagos').first().click();
-    await page.waitForTimeout(3000);
+    await page.waitForTimeout(4000);
     await expect(page.getByText('Debés 5 cuotas')).toBeVisible();
     await page.getByRole('button', { name: 'Realizar pagos' }).click();
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(1000);
   });
 
   await test.step('Verify behavior of counter of cuotas and conditional button Ir a pagar', async () => {

@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="54.013988999999995">
-<testsuite name="e2e/payment/paypal/paypalAdherirDACancelarloYCancelarAcuerdo.spec.ts" timestamp="2025-08-18T21:27:05.440Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="52.941" errors="0">
-<testcase name="Adherir DA cancelarlo y cancelar acuerdo" classname="e2e/payment/paypal/paypalAdherirDACancelarloYCancelarAcuerdo.spec.ts" time="52.941">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="44.345975">
+<testsuite name="e2e/payment/paypal/paypalAdherirDACancelarloYCancelarAcuerdo.spec.ts" timestamp="2025-08-19T12:37:06.273Z" hostname="Mobile Safari" tests="1" failures="0" skipped="0" time="43.006" errors="0">
+<testcase name="Adherir DA cancelarlo y cancelar acuerdo" classname="e2e/payment/paypal/paypalAdherirDACancelarloYCancelarAcuerdo.spec.ts" time="43.006">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results/e2e-payment-paypal-paypalA-3750e-ncelarlo-y-cancelar-acuerdo-Mobile-Safari/test-finished-1.png]]

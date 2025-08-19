@@ -101,7 +101,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 52941,
+                  "duration": 43006,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
@@ -109,46 +109,46 @@
                   "steps": [
                     {
                       "title": "Login to the application",
-                      "duration": 3385
+                      "duration": 3469
                     },
                     {
                       "title": "Navigar a flujo de pagos y verificar que no hay deuda",
-                      "duration": 2278
+                      "duration": 2478
                     },
                     {
                       "title": "Iniciar proceso de adherir DA con manejo de popup de PayPal",
-                      "duration": 3029
+                      "duration": 1739
                     },
                     {
                       "title": "Handle conditional PayPal flow",
-                      "duration": 14521
+                      "duration": 14585
                     },
                     {
                       "title": "Verificar que se adhirió DA",
-                      "duration": 1081
+                      "duration": 574
                     },
                     {
                       "title": "Cancelar Acuerdo de pago y verificar que el DA también se cancela",
-                      "duration": 1423
+                      "duration": 1882
                     },
                     {
                       "title": "Iniciar adherir DA otra vez para verificar que el acuerdo no se cancela automáticamente al darse de baja luego",
-                      "duration": 5263
+                      "duration": 2417
                     },
                     {
                       "title": "Handle conditional PayPal flow (second time)",
-                      "duration": 18791
+                      "duration": 12414
                     },
                     {
                       "title": "Cancelar DA y verificar que el acuerdo no se cancela",
-                      "duration": 199
+                      "duration": 200
                     },
                     {
                       "title": "Cancelar acuerdo y verificar que no se visualice",
-                      "duration": 2031
+                      "duration": 2043
                     }
                   ],
-                  "startTime": "2025-08-18T21:27:05.742Z",
+                  "startTime": "2025-08-19T12:37:06.642Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -192,8 +192,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-08-18T21:27:05.424Z",
-    "duration": 54013.988999999994,
+    "startTime": "2025-08-19T12:37:06.252Z",
+    "duration": 44345.975000000006,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,
