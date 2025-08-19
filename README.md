@@ -1,8 +1,8 @@
-# Framework de Testing E2E - Boca Juniors 🏆
+# Framework de Testing E2E 🏆
 
 ## Descripción
 
-Este framework de testing automatizado está construido con **Playwright** y está diseñado específicamente para realizar pruebas end-to-end (E2E) de la plataforma web de Boca Juniors. El framework incluye pruebas automatizadas para diferentes flujos de usuario, incluyendo reservas de partidos, pagos, autenticación y más.
+Este framework de testing automatizado está construido con **Playwright** y está diseñado específicamente para realizar pruebas end-to-end (E2E). El framework incluye pruebas automatizadas para diferentes flujos de usuario, incluyendo reservas de partidos, pagos, autenticación y más.
 
 ## Características Principales
 
@@ -17,22 +17,13 @@ Este framework de testing automatizado está construido con **Playwright** y est
 ## Estructura del Proyecto
 
 ```
-mcp-playwright-boca/
+mcp-playwright-main/
 ├── tests/
 │   ├── e2e/                    # Pruebas end-to-end
-│   │   ├── abono/             # Pruebas de abonos
-│   │   ├── home/              # Pruebas de página principal
-│   │   ├── login/             # Pruebas de autenticación
-│   │   ├── matches/           # Pruebas de reservas de partidos
-│   │   │   ├── confirmacionFiltro/
-│   │   │   ├── confirmacionInterna/
-│   │   │   ├── confirmacionWeb/
 │   │   │   ├── escenariosGenerales/
 │   │   │   └── vitalicios/
-│   │   └── payment/           # Pruebas de pagos
-│   │       └── paypal/        # Pruebas específicas de PayPal
 │   └── shared/
-│       └── utils/             # Utilidades compartidas
+│       └── utils/             # Utilidades compartidas, usuarios, credenciales
 │           ├── flow-handler.ts
 │           ├── login.ts
 │           ├── paypal.ts
@@ -59,7 +50,7 @@ Antes de comenzar, asegúrate de tener instalado:
 
 ```bash
 git clone <URL_DEL_REPOSITORIO>
-cd mcp-playwright-boca
+cd mcp-playwright-main
 ```
 
 ### 2. Instalar Dependencias
@@ -80,8 +71,8 @@ Crea un archivo `.env.hybrid` en la raíz del proyecto con las siguientes variab
 
 ```env
 # URLs de los ambientes
-BASE_URL_STAGING=https://bocasocios-tst.bocajuniors.com.ar/
-BASE_URL_DEV=https://bocasocios-test.bocajuniors.com.ar/
+BASE_URL_STAGING= ///
+BASE_URL_DEV= ///
 
 # Configuración de ejecución
 MCP_HEADLESS=false
@@ -91,11 +82,11 @@ MCP_HEADLESS=false
 Para usar los comandos rápidos como `ts`, `t`, y `th`, agrega las siguientes líneas a tu archivo `~/.zshrc`:
 
 ```bash
-# Scripts de testing de Boca
-alias ts="~/Documents/Paisanos/boca/mcp-playwright-boca/test-selector.sh"
-alias t="~/Documents/Paisanos/boca/mcp-playwright-boca/test-both.sh"
-alias th="~/Documents/Paisanos/boca/mcp-playwright-boca/test-both.sh headless"
-alias tm="~/Documents/Paisanos/boca/mcp-playwright-boca/test-mobile.sh"
+# Scripts de testing
+alias ts="~/Documents/Paisanos/MCPs/mcp-playwright-main/test-selector.sh"
+alias t="~/Documents/Paisanos/MCPs/mcp-playwright-main/test-both.sh"
+alias th="~/Documents/Paisanos/MCPs/mcp-playwright-main/test-both.sh headless"
+alias tm="~/Documents/Paisanos/MCPs/mcp-playwright-main/test-mobile.sh"
 ```
 
 Luego recarga tu terminal:
@@ -296,4 +287,4 @@ DEBUG=pw:api npx playwright test
 
 ---
 
-**¡Disfruta testing con Boca Juniors! 🏆⚽**
+**¡Disfruta testing! 🏆⚽**

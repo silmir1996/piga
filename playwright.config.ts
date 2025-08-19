@@ -6,7 +6,7 @@ dotenv.config({ path: '.env.hybrid' });
 
 // Fallback environment variables for CI
 if (!process.env.BASE_URL_STAGING) {
-  process.env.BASE_URL_STAGING = 'https://bocasocios-tst.bocajuniors.com.ar';
+  process.env.BASE_URL_STAGING = '/';
 }
 // Ensure MCP_HEADLESS is set to true by default, but allow override from command line
 // The .env.hybrid file has MCP_HEADLESS=false, but we want to override this for CI and th command

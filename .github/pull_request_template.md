@@ -1,4 +1,4 @@
-# 🚀 Pull Request - Framework de Testing E2E Boca Juniors
+# 🚀 Pull Request - Framework de Testing E2E
 
 ## 📋 Descripción
 
@@ -194,4 +194,4 @@ npx playwright test "ruta/específica/*.spec.ts"
 
 ---
 
-**¡Gracias por tu contribución al framework de testing de Boca Juniors! 🏆⚽**
+**¡Gracias por tu contribución al framework de testing! 🏆⚽**

@@ -1,6 +1,6 @@
-# Guía de Contribución - Framework de Testing E2E Boca Juniors 🏆
+# Guía de Contribución - Framework de Testing E2E 🏆
 
-¡Gracias por tu interés en contribuir al framework de testing automatizado de Boca Juniors! Este documento te guiará a través del proceso de contribución.
+¡Gracias por tu interés en contribuir al framework de testing automatizado! Este documento te guiará a través del proceso de contribución.
 
 ## 📋 Tabla de Contenidos
 
@@ -37,7 +37,7 @@ Al contribuir a este proyecto, te comprometes a:
 ```bash
 # Clonar el repositorio
 git clone <URL_DEL_REPOSITORIO>
-cd mcp-playwright-boca
+cd mcp-playwright-main
 
 # Instalar dependencias
 npm install
@@ -55,17 +55,17 @@ cp .env.example .env.hybrid
 Agrega estos alias a tu `~/.zshrc`:
 
 ```bash
-# Scripts de testing de Boca
-alias ts="~/Documents/Paisanos/boca/mcp-playwright-boca/test-selector.sh"
-alias t="~/Documents/Paisanos/boca/mcp-playwright-boca/test-both.sh"
-alias th="~/Documents/Paisanos/boca/mcp-playwright-boca/test-both.sh headless"
-alias tm="~/Documents/Paisanos/boca/mcp-playwright-boca/test-mobile.sh"
+# Scripts de testing 
+alias ts="~/Documents/Paisanos/MCPs/mcp-playwright-main/test-selector.sh"
+alias t="~/Documents/Paisanos/MCPs/mcp-playwright-main/test-both.sh"
+alias th="~/Documents/Paisanos/MCPs/mcp-playwright-main/test-both.sh headless"
+alias tm="~/Documents/Paisanos/MCPs/mcp-playwright-main/test-mobile.sh"
 ```
 
 ## 📁 Estructura del Proyecto
 
 ```
-mcp-playwright-boca/
+mcp-playwright-main/
 ├── tests/
 │   ├── e2e/                    # Pruebas end-to-end
 │   │   ├── abono/             # Pruebas de abonos
@@ -412,4 +412,4 @@ Si tienes preguntas o necesitas ayuda:
 
 ---
 
-**¡Gracias por contribuir al framework de testing de Boca Juniors! 🏆⚽**
+**¡Gracias por contribuir al framework de testing! 🏆⚽**

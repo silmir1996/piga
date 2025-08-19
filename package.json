@@ -1,12 +1,11 @@
 {
-  "name": "mcp-playwright-boca",
+  "name": "mcp-playwright-main",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "codegen:local": "npx playwright codegen http://localhost:3000/",
-    "codegen:staging": "npx playwright codegen https://bocasocios-tst.bocajuniors.com.ar/",
-    "codegen:dev": "npx playwright codegen https://bocasocios-test.bocajuniors.com.ar/",
+
     "test:reserva": "npx playwright test tests/e2e/matches/vitalicios/reservaWeb/",
     "test:reserva-web": "npx playwright test \"tests/e2e/matches/vitalicios/reservaWeb/reservaConValidacion.spec.ts\"",
     "test:desktop": "npx playwright test --project=\"Desktop Chrome\"",
