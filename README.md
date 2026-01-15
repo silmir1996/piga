@@ -98,7 +98,23 @@ Luego recarga tu terminal:
 source ~/.zshrc
 ```
 
-#### Para Windows (PowerShell):
+#### Para Windows:
+
+**Opción 1: Usar el script .bat directamente (MÁS FÁCIL - No requiere configuración)**
+
+Simplemente ejecuta desde la raíz del proyecto:
+
+```cmd
+scripts\td.bat headed tests/e2e/login/loginAgip.spec.ts
+```
+
+O desde cualquier ubicación (ajusta la ruta):
+
+```cmd
+C:\Users\Quick\piga\scripts\td.bat headed tests/e2e/login/loginAgip.spec.ts
+```
+
+**Opción 2: Configurar alias en PowerShell (Requiere configuración una vez)**
 
 Abre PowerShell y ejecuta:
 
@@ -113,13 +129,17 @@ Si el archivo no existe, créalo con:
 New-Item -Path $PROFILE -Type File -Force
 ```
 
-Agrega estas líneas (ajusta la ruta según tu ubicación):
+Agrega estas líneas (ajusta la ruta según tu ubicación del proyecto):
 
 ```powershell
 # Scripts de testing
 function td {
     param([string]$ModeOrFile, [string]$TestFile)
-    & "C:\ruta\a\tu\proyecto\mcp-playwright-main\scripts\td.ps1" $ModeOrFile $TestFile
+    $scriptPath = Join-Path $PSScriptRoot "scripts\td.ps1"
+    if (-not $scriptPath) {
+        $scriptPath = "C:\Users\Quick\piga\scripts\td.ps1"  # Ajusta esta ruta
+    }
+    & $scriptPath $ModeOrFile $TestFile
 }
 ```
 
@@ -128,6 +148,8 @@ Guarda y cierra. Luego recarga PowerShell:
 ```powershell
 . $PROFILE
 ```
+
+Ahora podrás usar: `td headed tests/e2e/login/loginAgip.spec.ts`
 
 ## Uso del Framework
 
