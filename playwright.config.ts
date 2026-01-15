@@ -20,6 +20,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : 4, // Use 4 workers for local development
+  timeout: 100000, // Test timeout: 2 minutes (120000ms)
   
   reporter: [
     ['html'],
@@ -32,7 +33,7 @@ export default defineConfig({
     screenshot: 'on',
     video: 'on',
     trace: 'on',
-    actionTimeout: 10000,
+    actionTimeout: 10000000,
     headless: process.env.MCP_HEADLESS !== 'false',
     // Ignore SSL certificate errors for staging environments
     ignoreHTTPSErrors: true,

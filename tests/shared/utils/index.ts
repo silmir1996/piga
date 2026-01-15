@@ -5,6 +5,7 @@ export * from './flow-handler';
 export * from './paypal';
 export * from './popup-handler';
 export * from './test-setup';
+export * from './element-utils';
 
 /**
  * Registra los botones disponibles para debug
