@@ -8,9 +8,12 @@ import { users } from './users';
  */
 export async function login(page: Page, userEmail: string) {
   await page.goto('/');
-  await page.getByRole('textbox', { name: 'Correo electrónico' }).fill(userEmail);
-  await page.getByRole('textbox', { name: 'Contraseña' }).fill(users.password);
-  await page.getByRole('button', { name: 'Iniciar sesión' }).click();
+  await page.getByRole('link', { name: 'Clave Ciudad' }).click();
+  await page.getByRole('textbox', { name: 'CUIT' }).click();
+  await page.getByRole('textbox', { name: 'CUIT' }).fill(users.userAgip);
+  await page.getByRole('textbox', { name: 'CLAVE' }).click();
+  await page.getByRole('textbox', { name: 'CLAVE' }).fill(users.password);
+  await page.getByRole('button', { name: 'Ingresar' }).click();
 }
 
 /**

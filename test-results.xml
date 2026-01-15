@@ -1,0 +1,22 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="26.193690999999998">
+<testsuite name="e2e/login/loginAgip.spec.ts" timestamp="2026-01-15T15:32:48.954Z" hostname="Desktop Chrome" tests="1" failures="0" skipped="0" time="24.55" errors="0">
+<testcase name="[LOGIN-AGIP-001] Realizar compensacion de saldo" classname="e2e/login/loginAgip.spec.ts" time="24.55">
+<system-out>
+<![CDATA[✅ CUIT "30685889397" seleccionado correctamente. Valor: "30685889397", Texto: "DIRECTV ARGENTINA SA [30-68588939-7]"
+✅ CUIT "30685889397" verificado en la página de destino.
+✅ "Compensar Saldo" clickeado exitosamente sin errores
+✅ Período más antiguo encontrado: 2025/05 (Fecha Vto: 22/10/2025)
+Selected period: 2025/05
+✅ Validated period: 2025/05 is displayed in confirmation screen
+✅ Validated domain: OAD130 is displayed in confirmation screen
+
+[[ATTACHMENT|test-results/e2e-login-loginAgip--LOGIN-0c964-lizar-compensacion-de-saldo-Desktop-Chrome/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/e2e-login-loginAgip--LOGIN-0c964-lizar-compensacion-de-saldo-Desktop-Chrome/video.webm]]
+
+[[ATTACHMENT|test-results/e2e-login-loginAgip--LOGIN-0c964-lizar-compensacion-de-saldo-Desktop-Chrome/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

@@ -1,0 +1,199 @@
+{
+  "config": {
+    "configFile": "/Users/chrisfiore/Documents/MCPs/mcp-playwright-main/playwright.config.ts",
+    "rootDir": "/Users/chrisfiore/Documents/MCPs/mcp-playwright-main/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 50,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "test-results.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/chrisfiore/Documents/MCPs/mcp-playwright-main/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Desktop Chrome",
+        "name": "Desktop Chrome",
+        "testDir": "/Users/chrisfiore/Documents/MCPs/mcp-playwright-main/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 100000
+      },
+      {
+        "outputDir": "/Users/chrisfiore/Documents/MCPs/mcp-playwright-main/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari",
+        "name": "Mobile Safari",
+        "testDir": "/Users/chrisfiore/Documents/MCPs/mcp-playwright-main/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 100000
+      }
+    ],
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.57.0",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "e2e/login/loginAgip.spec.ts",
+      "file": "e2e/login/loginAgip.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "[LOGIN-AGIP-001] Realizar compensacion de saldo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 100000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Desktop Chrome",
+              "projectName": "Desktop Chrome",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 24550,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "✅ CUIT \"30685889397\" seleccionado correctamente. Valor: \"30685889397\", Texto: \"DIRECTV ARGENTINA SA [30-68588939-7]\"\n"
+                    },
+                    {
+                      "text": "✅ CUIT \"30685889397\" verificado en la página de destino.\n"
+                    },
+                    {
+                      "text": "✅ \"Compensar Saldo\" clickeado exitosamente sin errores\n"
+                    },
+                    {
+                      "text": "✅ Período más antiguo encontrado: 2025/05 (Fecha Vto: 22/10/2025)\n"
+                    },
+                    {
+                      "text": "Selected period: 2025/05\n"
+                    },
+                    {
+                      "text": "✅ Validated period: 2025/05 is displayed in confirmation screen\n"
+                    },
+                    {
+                      "text": "✅ Validated domain: OAD130 is displayed in confirmation screen\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Enter credentials and navigate to Nueva Cuenta Corriente",
+                      "duration": 1733
+                    },
+                    {
+                      "title": "Seleccionar a DirectTV y acceder a Nueva Cuenta Corriente",
+                      "duration": 6345
+                    },
+                    {
+                      "title": "Verificar que se ingresó correctamente y navegar a Operaciones",
+                      "duration": 5307
+                    },
+                    {
+                      "title": "Seleccionar la factura más antiguo, e ingresar dominio",
+                      "duration": 5203
+                    },
+                    {
+                      "title": "Seleccionar el concepto más antiguo, y continuar",
+                      "duration": 3625
+                    },
+                    {
+                      "title": "Validar datos y confirmar la operación",
+                      "duration": 1355
+                    }
+                  ],
+                  "startTime": "2026-01-15T15:32:49.295Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/chrisfiore/Documents/MCPs/mcp-playwright-main/test-results/e2e-login-loginAgip--LOGIN-0c964-lizar-compensacion-de-saldo-Desktop-Chrome/test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/chrisfiore/Documents/MCPs/mcp-playwright-main/test-results/e2e-login-loginAgip--LOGIN-0c964-lizar-compensacion-de-saldo-Desktop-Chrome/video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/chrisfiore/Documents/MCPs/mcp-playwright-main/test-results/e2e-login-loginAgip--LOGIN-0c964-lizar-compensacion-de-saldo-Desktop-Chrome/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ccf2c73363b7b5bf6c00-3c1adfd901a921f64b47",
+          "file": "e2e/login/loginAgip.spec.ts",
+          "line": 15,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-01-15T15:32:48.854Z",
+    "duration": 26193.691,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
