@@ -79,20 +79,54 @@ MCP_HEADLESS=false
 
 ### 5. Configurar Scripts de Conveniencia (Opcional)
 
-Para usar los comandos rápidos como `ts`, `t`, y `th`, agrega las siguientes líneas a tu archivo `~/.zshrc`:
+#### Para macOS/Linux (Zsh/Bash):
+
+Agrega las siguientes líneas a tu archivo `~/.zshrc` o `~/.bashrc`:
 
 ```bash
 # Scripts de testing
-alias ts="~/Documents/Paisanos/MCPs/mcp-playwright-main/test-selector.sh"
-alias t="~/Documents/Paisanos/MCPs/mcp-playwright-main/test-both.sh"
-alias th="~/Documents/Paisanos/MCPs/mcp-playwright-main/test-both.sh headless"
-alias tm="~/Documents/Paisanos/MCPs/mcp-playwright-main/test-mobile.sh"
+alias ts="~/Documents/MCPs/mcp-playwright-main/scripts/test-selector.sh"
+alias t="~/Documents/MCPs/mcp-playwright-main/test-both.sh"
+alias th="~/Documents/MCPs/mcp-playwright-main/test-both.sh headless"
+alias tm="~/Documents/MCPs/mcp-playwright-main/scripts/test-mobile.sh"
+alias td="~/Documents/MCPs/mcp-playwright-main/scripts/td.sh"
 ```
 
 Luego recarga tu terminal:
 
 ```bash
 source ~/.zshrc
+```
+
+#### Para Windows (PowerShell):
+
+Abre PowerShell y ejecuta:
+
+```powershell
+# Editar el perfil de PowerShell
+notepad $PROFILE
+```
+
+Si el archivo no existe, créalo con:
+
+```powershell
+New-Item -Path $PROFILE -Type File -Force
+```
+
+Agrega estas líneas (ajusta la ruta según tu ubicación):
+
+```powershell
+# Scripts de testing
+function td {
+    param([string]$ModeOrFile, [string]$TestFile)
+    & "C:\ruta\a\tu\proyecto\mcp-playwright-main\scripts\td.ps1" $ModeOrFile $TestFile
+}
+```
+
+Guarda y cierra. Luego recarga PowerShell:
+
+```powershell
+. $PROFILE
 ```
 
 ## Uso del Framework

@@ -21,7 +21,8 @@
     "mobileh-headed": "npx playwright test --project=\"Mobile Safari\" --headed",
     "mobiles-headed": "npx playwright test --project=\"Mobile Safari\" --headed",
     "test:headed": "MCP_HEADLESS=false npx playwright test",
-    "test:headless": "MCP_HEADLESS=true npx playwright test"
+    "test:headless": "MCP_HEADLESS=true npx playwright test",
+    "test:login": "npx playwright test tests/e2e/login/loginAgip.spec.ts --headed"
   },
   "keywords": [],
   "author": "",
